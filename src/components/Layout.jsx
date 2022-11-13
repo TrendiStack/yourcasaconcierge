@@ -14,7 +14,7 @@ const Layout = () => {
       <Services />
       <Pricing />
       <Brands />
-      {/* <Contact /> */}
+      <Contact />
       <Footer />
     </div>
   );
