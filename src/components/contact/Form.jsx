@@ -61,10 +61,8 @@ const Form = () => {
       navigate("/success");
     },
   });
-  const value = {
-    formik,
-    formRef,
-  };
+
+  const { firstName, lastName, email, phone, inquiry } = formik.values;
   return (
     <m.form
       initial={{ opacity: 0, x: 100 }}
