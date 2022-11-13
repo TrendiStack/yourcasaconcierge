@@ -63,7 +63,7 @@ export const FormValidationProvider = ({ children }) => {
         .max(100, "Must be 100 characters or less")
         .required("Required"),
     }),
-    onSubmit: (values) => {
+    onSubmit: () => {
       //send email
       sendEmail();
       //navigate to success page
