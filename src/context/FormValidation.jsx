@@ -1,6 +1,6 @@
 import { createContext, useRef } from "react";
 import { useFormik } from "formik";
-import * as Yup from "yup";
+import * as yup from "yup";
 import { useNavigate } from "react-router-dom";
 import emailjs from "@emailjs/browser";
 
@@ -44,18 +44,22 @@ export const FormValidationProvider = ({ children }) => {
       inquiry: "",
     },
     //validate form
-    validationSchema: Yup.object({
-      firstName: Yup.string()
+    validationSchema: yup.object({
+      firstName: yup
+        .string()
         .max(15, "Must be 15 characters or less")
         .required("Required"),
-      lastName: Yup.string()
+      lastName: yup
+        .string()
         .max(20, "Must be 20 characters or less")
         .required("Required"),
-      email: Yup.string().email("Invalid email address").required("Required"),
-      phone: Yup.string()
+      email: yup.string().email("Invalid email address").required("Required"),
+      phone: yup
+        .string()
         .max(10, "Must be 10 characters or less")
         .required("Required"),
-      inquiry: Yup.string()
+      inquiry: yup
+        .string()
         .max(100, "Must be 100 characters or less")
         .required("Required"),
     }),
