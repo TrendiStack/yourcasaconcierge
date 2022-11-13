@@ -1,6 +1,6 @@
 import { createContext, useRef } from "react";
 import { useFormik } from "formik";
-import { Yup } from "yup";
+import * as Yup from "yup";
 import { useNavigate } from "react-router-dom";
 import emailjs from "@emailjs/browser";
 
