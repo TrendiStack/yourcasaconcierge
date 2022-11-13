@@ -1,6 +1,6 @@
 import { createContext, useRef } from "react";
 import { useFormik } from "formik";
-import * as Yup from "yup";
+import { Yup } from "yup";
 import { useNavigate } from "react-router-dom";
 import emailjs from "@emailjs/browser";
 
@@ -66,7 +66,6 @@ export const FormValidationProvider = ({ children }) => {
       navigate("/success");
     },
   });
-  const { firstName, lastName, email, phone, inquiry } = formik.values;
   const value = {
     formik,
     formRef,
