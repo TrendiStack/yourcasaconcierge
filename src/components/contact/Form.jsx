@@ -5,7 +5,6 @@ import { motion as m } from "framer-motion";
 const Form = () => {
   const { firstName, lastName, email, phone, inquiry, formik, formRef } =
     useContext(FormValidationContext);
-  console.log(formik.errors);
   return (
     <m.form
       initial={{ opacity: 0, x: 100 }}

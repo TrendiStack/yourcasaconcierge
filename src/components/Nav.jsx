@@ -29,7 +29,13 @@ const Nav = () => {
     <>
       <Menu />
       <nav
-        onClick={isOpen === "open" && toggleMenu}
+        onClick={
+          isOpen
+            ? () => {
+                toggleMenu();
+              }
+            : null
+        }
         className={`${bg} fixed top-0 left-0 w-screen py-5 px-8 md:px-0 z-50 transition-all duration-500`}
       >
         <div className="container flex justify-between items-center">
