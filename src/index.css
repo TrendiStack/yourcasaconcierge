@@ -1,0 +1,149 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Mulish:wght@200;300;400;500;600;700;800;900;1000&family=Nunito:wght@200;300;400;500;600;700;800;900;1000&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+body {
+  font-family: "Inter", sans-serif;
+  @apply bg-[#2E4959];
+}
+
+.garamond {
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 600;
+}
+
+.container {
+  @apply max-w-[1080px] 2xl:max-w-[1440px] mx-auto;
+}
+
+.bg {
+  @apply bg-[#D6DFDE];
+}
+
+.bg-variant {
+  @apply bg-[#527488];
+}
+
+.bg-variant-2 {
+  @apply bg-[#2E4959];
+}
+
+.header-text {
+  font-size: clamp(3.75rem, 5vw, 4.75rem);
+  color: #527488;
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 900;
+  padding-top: 2.5rem;
+  padding-bottom: 1.25rem;
+}
+
+.header-text-variant {
+  font-size: clamp(3.75rem, 5vw, 4.75rem);
+  color: #161616;
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 900;
+  padding-top: 2.5rem;
+  padding-bottom: 1.25rem;
+}
+
+.header-text-mobile {
+  font-size: clamp(3.75rem, 5vw, 4.75rem);
+  color: #527488;
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 900;
+}
+
+/* BUTTON ANIMATION */
+
+.link-item {
+  @apply relative 
+          after:content-[''] 
+          after:absolute 
+          after:bottom-0 
+          after:left-[50%] 
+          after:w-0 
+          after:h-[1px] 
+          hover:after:w-full 
+          hover:after:left-[0%] 
+          after:transition-all 
+          after:duration-500 
+          after:ease-in-out 
+          after:transform 
+          after:origin-left;
+}
+
+.pricing-btn {
+  @apply relative
+          z-[1]
+          border border-black py-2 px-5 self-start
+          after:content-['']
+          after:absolute
+          after:bottom-0
+          after:left-[50%]
+          after:w-0
+          after:h-full
+          after:z-[-1]
+          after:bg-black
+          hover:after:w-full
+          hover:after:left-[0%]
+          after:transition-all
+          after:duration-500
+          after:ease-in-out
+          after:transform
+          after:origin-left
+          hover:text-white
+          transition-all
+          duration-500
+          ease-in-out
+          transform
+          hover:scale-105
+          hover:shadow-lg;
+}
+
+/* 404 TEXT */
+
+.not-found {
+  font-size: clamp(2.5rem, 5vw, 6rem);
+  line-height: 1;
+}
+
+/* BURGER MENU & ANIMATION */
+.menu-btn {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+}
+
+.menu-btn > div {
+  width: 28px;
+  height: 3px;
+  margin: 3px;
+  border-radius: 100px;
+}
+
+.open:nth-child(1) {
+  transform: rotate(45deg) translateY(0px) translateX(6px);
+  transition: all 400ms ease-in-out;
+}
+
+.open:nth-child(2) {
+  transform: rotate(-45deg) translateY(0px) translateX(6px);
+  width: 28px;
+  transition: all 400ms ease-in-out;
+}
+
+.close:nth-child(1) {
+  transform: rotate(0) translateY(0);
+  transition: all 400ms ease-in-out;
+}
+
+.close:nth-child(2) {
+  width: 20px;
+  margin-left: 10px;
+  transition: all 400ms ease-in-out;
+}
