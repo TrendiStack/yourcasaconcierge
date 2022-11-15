@@ -20,8 +20,15 @@ export const RefProvider = ({ children }) => {
       },
       { threshold: 0 }
     );
-    observer.observe(footerRef.current);
-  }, []);
+    if (footerRef.current) {
+      observer.observe(footerRef.current);
+    }
+    return () => {
+      if (footerRef.current) {
+        observer.unobserve(footerRef.current);
+      }
+    };
+  }, [footerRef]);
 
   const value = {
     footerRef,

@@ -6,7 +6,7 @@ const Pricing = () => {
   const { pricing } = content;
   const { plans } = pricing;
   return (
-    <div id="prices" className="bg pb-20 px-8 xl:px-0">
+    <div id="prices" className="bg pb-20">
       <div className="container">
         <m.h1
           initial={{ opacity: 0, x: -100 }}

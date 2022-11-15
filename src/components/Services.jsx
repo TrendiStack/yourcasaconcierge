@@ -29,7 +29,7 @@ const Services = () => {
 
   return (
     <div id="services" className="bg-variant pb-36">
-      <div className="container px-8 flex flex-col">
+      <div className="container flex flex-col">
         <h1 className="garamond header-text-variant">{data.title}</h1>
         <p className="text-2xl max-w-xl mb-5">{data.description}</p>
 

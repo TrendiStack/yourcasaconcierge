@@ -10,7 +10,7 @@ const Brands = () => {
       id="brands"
       className="h-screen flex items-center bg-variant "
     >
-      <div className="container grid grid-cols-2 px-8">
+      <div className="container grid grid-cols-2">
         <div className="flex items-center justify-center h-40 w-full border-b border-r border-black">
           <p className="garamond md:text-lg xl:text-3xl text-center mr-2">
             We work with all your
