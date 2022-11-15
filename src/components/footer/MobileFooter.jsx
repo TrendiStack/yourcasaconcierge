@@ -10,8 +10,6 @@ import {
 const MobileFooter = () => {
   const { footer } = content;
   const { nav } = content;
-
-  console.log(nav.filter((item) => item.id < 4));
   return (
     <div className="container xl:hidden py-10 px-8">
       <img className="w-[200px] logo" src={ycclogoblack} alt="logo" />

@@ -6,9 +6,11 @@ import logo from "../assets/images/ycclogo.svg";
 import LinkItem from "./LinkItem";
 import Menu from "./Menu";
 import content from "../content";
+import { RefContext } from "../context/RefContext";
 
 const Nav = () => {
   const { isOpen, toggleMenu } = useContext(MenuContext);
+  const { footervisible } = useContext(RefContext);
   // background
   const [bg, setBg] = useState("bg-transparent");
   const { nav } = content;
@@ -31,7 +33,9 @@ const Nav = () => {
       <Menu />
       <nav
         onClick={isOpen === "open" ? toggleMenu : null}
-        className={`${bg} fixed top-0 left-0 w-screen py-5 px-8 md:px-0 z-50 transition-all duration-500`}
+        className={`${bg} ${
+          footervisible ? "top-[-100px]" : "top-0"
+        } fixed top-0 left-0 w-screen py-5 px-8 md:px-0 z-50 transition-all duration-500`}
       >
         <div className="container flex justify-between items-center">
           <Link to="/#home">

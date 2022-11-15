@@ -7,10 +7,13 @@ import {
   FaLinkedin,
 } from "react-icons/fa";
 import LinkItem from "../LinkItem";
+import { useContext } from "react";
+import { RefContext } from "../../context/RefContext";
 
 const DesktopFooter = () => {
   const { footer } = content;
   const { nav } = content;
+  const { footerRef } = useContext(RefContext);
   return (
     <>
       <img
@@ -51,7 +54,10 @@ const DesktopFooter = () => {
             ))}
           </ul>
         </div>
-        <div className="flex justify-between items-end mt-20 mb-1">
+        <div
+          ref={footerRef}
+          className="flex justify-between items-end mt-20 mb-1"
+        >
           <img className="w-[400px] logo" src={ycclogo} alt="logo" />
           <p className="font-medium">{footer.copyRight}</p>
         </div>
