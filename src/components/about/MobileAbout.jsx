@@ -1,5 +1,5 @@
 import React from "react";
-import livingRoomDark from "../../assets/images/content/living-room-dark.avif";
+import livingRoomDark from "../../assets/images/content/living-room-dark.jpg";
 
 const MobileAbout = () => {
   return (

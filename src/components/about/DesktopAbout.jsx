@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from "react";
-import livingRoomDark from "../../assets/images/content/living-room-dark.avif";
+import livingRoomDark from "../../assets/images/content/living-room-dark.jpg";
 import { motion as m, useInView } from "framer-motion";
 
 const DesktopAbout = () => {

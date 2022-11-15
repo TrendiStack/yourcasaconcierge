@@ -1,5 +1,5 @@
 import React from "react";
-import headerImg from "../assets/images/header-img.avif";
+import headerImg from "../assets/images/header-img.jpg";
 import HeroForm from "./contact/HeroForm";
 import { motion as m } from "framer-motion";
 
@@ -22,7 +22,7 @@ const Hero = () => {
         <h2 className="text-xl xl:text-2xl">Lightening your load</h2>
         <h1 className="text-5xl xl:text-8xl">With great service</h1>
         <button className="xl:hidden border border-white py-2 px-4 self-start">
-          <a href="">Contact Us</a>
+          <a href="/">Contact Us</a>
         </button>
       </div>
       <HeroForm />
