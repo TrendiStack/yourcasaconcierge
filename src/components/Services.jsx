@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import { useState } from "react";
+import content from "../content";
 import { livingRoomDark } from "../assets/images/content";
 import {
   airbnb,
@@ -11,76 +12,38 @@ import Service from "./services/Service";
 
 const Services = () => {
   const [service, setService] = useState("");
+  const { services: data } = content;
 
-  const services = [
-    {
-      num: 1,
-      title: "Cleaning Service",
-      desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. ",
-    },
-    {
-      num: 2,
-      title: "Price Optimization",
-      desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. ",
-    },
-    {
-      num: 3,
-      title: "Client Communication",
-      desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. ",
-    },
-    {
-      num: 4,
-      title: "Guest Experience",
-      desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. ",
-    },
-
-    {
-      num: 5,
-      title: "24/7 Support",
-      desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. ",
-    },
-
-    {
-      num: 6,
-      title: "Re-stocking",
-      desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. ",
-    },
-  ];
+  const imageHandler =
+    service === 1
+      ? airbnb
+      : service === 2
+      ? booking
+      : service === 3
+      ? expedia
+      : service === 4
+      ? homeaway
+      : service === 5
+      ? vrbo
+      : livingRoomDark;
 
   return (
     <div id="services" className="bg-variant pb-36">
       <div className="container px-8 flex flex-col">
-        <h1 className="garamond header-text-variant">Services</h1>
-        <p className="text-2xl max-w-xl mb-5">
-          We offer the best services for our customers. We are here to help you
-        </p>
+        <h1 className="garamond header-text-variant">{data.title}</h1>
+        <p className="text-2xl max-w-xl mb-5">{data.description}</p>
 
         <div className="md:flex items-center gap-10">
           <div className="bg p-5 w-full mb-5 md:mb-0 md:max-w-[50%] xl:max-w-[80%] shadow-lg">
-            <img
-              src={
-                service === 1
-                  ? airbnb
-                  : service === 2
-                  ? booking
-                  : service === 3
-                  ? expedia
-                  : service === 4
-                  ? homeaway
-                  : service === 5
-                  ? vrbo
-                  : livingRoomDark
-              }
-              alt=""
-            />
+            <img src={imageHandler} alt={imageHandler} />
           </div>
           <ul className="grid grid-cols-1 xl:grid-cols-2 gap-10">
-            {[...Array(6)].map((_, i) => (
+            {data.services.map((service) => (
               <Service
-                key={i}
-                num={services[i].num}
-                title={services[i].title}
-                desc={services[i].desc}
+                key={service.id}
+                num={service.id}
+                title={service.title}
+                desc={service.description}
                 setService={setService}
               />
             ))}

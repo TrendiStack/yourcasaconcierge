@@ -13,7 +13,7 @@ const Hero = () => {
   return (
     <header
       id="home"
-      className="relative bg-fixed w-full flex flex-col justify-center h-screen text-white"
+      className="relative lg:bg-fixed w-full flex flex-col justify-center h-screen text-white"
       style={styles}
     >
       {/* overlay gradient */}
@@ -22,7 +22,7 @@ const Hero = () => {
         <h2 className="text-xl xl:text-2xl">Lightening your load</h2>
         <h1 className="text-5xl xl:text-8xl">With great service</h1>
         <button className="xl:hidden border border-white py-2 px-4 self-start">
-          <a href="/">Contact Us</a>
+          <a href="#contact">Contact Us</a>
         </button>
       </div>
       <HeroForm />

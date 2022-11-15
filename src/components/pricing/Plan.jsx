@@ -1,20 +1,8 @@
-import React from "react";
-import {
-  pricingPlanOne,
-  pricingPlanTwo,
-  pricingPlanThree,
-} from "../../assets/images/content";
 import { motion as m } from "framer-motion";
 
-const Plan = ({ reversed, image }) => {
+const Plan = ({ reversed, image, title, desc }) => {
   const styles = {
-    backgroundImage: `url(${
-      image === "pricingPlanOne"
-        ? pricingPlanOne
-        : image === "pricingPlanTwo"
-        ? pricingPlanTwo
-        : pricingPlanThree
-    })`,
+    backgroundImage: `url(${image})`,
     backgroundRepeat: "no-repeat",
     backgroundSize: "cover",
     backgroundPosition: "center",
@@ -42,7 +30,7 @@ const Plan = ({ reversed, image }) => {
           transition={{ duration: 1.5, delay: 1.5 }}
           className="text-4xl 2xl:text-[64px] text-[#527488] font-semibold"
         >
-          Starter
+          {title}
         </m.p>
         <m.p
           initial={{ opacity: 0, x: reversed ? 100 : -100 }}
@@ -50,15 +38,12 @@ const Plan = ({ reversed, image }) => {
           transition={{ duration: 1.5, delay: 2 }}
           className="max-w-[403px] text-[20px]"
         >
-          dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-          proident, sunt in culpa qui officia deserunt mollit anim id est
-          laborum.
+          {desc}
         </m.p>
         <m.button
           initial={{ opacity: 0, x: reversed ? 100 : -100 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 1.5, delay: 2.5 }}
-          // button animation
           className="pricing-btn"
         >
           Get Started

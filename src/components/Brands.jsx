@@ -1,10 +1,3 @@
-import {
-  airbnb,
-  booking,
-  expedia,
-  homeaway,
-  vrbo,
-} from "../assets/images/brands";
 import { motion as m } from "framer-motion";
 import BrandLogo from "./brands/BrandLogo";
 

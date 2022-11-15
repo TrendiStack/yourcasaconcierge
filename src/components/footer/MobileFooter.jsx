@@ -1,5 +1,5 @@
+import content from "../../content";
 import ycclogoblack from "../../assets/images/ycclogoblack.svg";
-
 import {
   FaFacebookF,
   FaTwitter,
@@ -8,40 +8,43 @@ import {
 } from "react-icons/fa";
 
 const MobileFooter = () => {
+  const { footer } = content;
+  const { nav } = content;
+
+  console.log(nav.filter((item) => item.id < 4));
   return (
     <div className="container xl:hidden py-10 px-8">
       <img className="w-[200px] logo" src={ycclogoblack} alt="logo" />
 
       <ul className="flex justify-between my-5">
         <div className="flex flex-col gap-2">
-          <li>
-            <a href="#about">About</a>
-          </li>
-          <li>
-            <a href="#services">Services</a>
-          </li>
-          <li>
-            <a href="#prices">Pricing</a>
-          </li>
+          {nav
+            .filter((item) => item.id < 5 && item.id !== 1)
+            .map((item) => (
+              <li key={item.id}>
+                <a href={item.path}>{item.title}</a>
+              </li>
+            ))}
         </div>
         <div className="flex flex-col gap-2">
-          <li>
-            <a href="#brands">Brands</a>
-          </li>
-          <li>
-            <a href="#contact">Contact Us</a>
-          </li>
+          {nav
+            .filter((item) => item.id > 4 && item.id < 7)
+            .map((item) => (
+              <li key={item.id}>
+                <a href={item.path}>{item.title}</a>
+              </li>
+            ))}
         </div>
       </ul>
       <div className="my-4">
         <p className="font-semibold">Address:</p>
-        <p>Level 1, 12 Sample St, Sydney NSW 2000</p>
+        <p>{footer.address}</p>
       </div>
       <div className="my-4">
         <p className="font-semibold">Contact:</p>
         <p>
-          1-800-123-4567
-          <br /> hello@youcasaconcierge.com
+          {footer.phone}
+          <br /> {footer.email}
         </p>
       </div>
       <div className="flex justify-between mt-2">
@@ -56,9 +59,7 @@ const MobileFooter = () => {
           <FaLinkedin className="text-xl" />
         </div>
       </div>
-      <p className="text-center pt-8 font-light">
-        © 2022 YourCasaConcierge. All right reserved.
-      </p>
+      <p className="text-center pt-8 font-light">{footer.copyRight}</p>
     </div>
   );
 };

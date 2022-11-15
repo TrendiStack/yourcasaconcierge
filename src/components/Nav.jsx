@@ -1,16 +1,17 @@
-import React, { useContext, useState, useEffect } from "react";
+import { useContext, useState, useEffect } from "react";
+import { MenuContext } from "../context/MenuContext";
 import { HashLink as Link } from "react-router-hash-link";
 import { Outlet } from "react-router-dom";
 import logo from "../assets/images/ycclogo.svg";
-import { MenuContext } from "../context/MenuContext";
 import LinkItem from "./LinkItem";
 import Menu from "./Menu";
+import content from "../content";
 
 const Nav = () => {
   const { isOpen, toggleMenu } = useContext(MenuContext);
   // background
   const [bg, setBg] = useState("bg-transparent");
-
+  const { nav } = content;
   useEffect(() => {
     window.addEventListener("scroll", () => {
       if (window.scrollY > 0) {
@@ -38,24 +39,16 @@ const Nav = () => {
             <h1 className="xl:hidden garamond text-white text-4xl">YCC</h1>
           </Link>
           <ul className="hidden relative xl:flex gap-3 text-white text-md font-light">
-            <li>
-              <LinkItem to="about" text="About" />
-            </li>
-            <li>
-              <LinkItem to="services" text="Services" />
-            </li>
-            <li>
-              <LinkItem to="prices" text="Pricing" />
-            </li>
-            <li>
-              <LinkItem to="brands" text="Brands" />
-            </li>
-            <li>
-              <LinkItem to="contact" text="Contact" />
-            </li>
+            {nav.map((item, index) => {
+              return (
+                <li key={item.id}>
+                  <LinkItem to={item.path} text={item.title} />
+                </li>
+              );
+            })}
           </ul>
           <div className="flex items-center gap-4 xl:hidden text-white">
-            <Link to="/#contact" className="xl:hidden">
+            <Link to={`/#${nav[nav.length - 1].path}`} className="xl:hidden">
               Contact
             </Link>
             <div onClick={toggleMenu} className="menu-btn">

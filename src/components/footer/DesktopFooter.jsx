@@ -1,6 +1,5 @@
-import ycclogoblack from "../../assets/images/ycclogoblack.svg";
+import content from "../../content";
 import ycclogo from "../../assets/images/ycclogo.svg";
-
 import {
   FaFacebookF,
   FaTwitter,
@@ -10,20 +9,27 @@ import {
 import LinkItem from "../LinkItem";
 
 const DesktopFooter = () => {
+  const { footer } = content;
+  const { nav } = content;
   return (
     <>
       <img
         src="https://images.unsplash.com/photo-1491489226161-1d38cb39ec64?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2500&q=80"
         alt=""
-        className="h-[25rem] w-full object-cover"
+        className="h-[15rem] lg:h-[25rem] w-full object-cover"
       />
       <div className="container hidden xl:block py-5 text-[#D6DFDE]">
-        <div className="flex justify-between items-center mt-10">
+        <div className="flex justify-between mt-10">
           <div className="garamond">
             <div className="text-xl leading-5">
-              <p>Level 1, 12 Sample St, Sydney NSW 2000</p>
-              <p>1 - 800 - 123 - 4567</p>
-              <p>hello @ youcasaconcierge.com</p>
+              <p>{footer.address}</p>
+              <p>
+                {footer.phone.split("-")[0]} - {footer.phone.split("-")[1]} -{" "}
+                {footer.phone.split("-")[2]} - {footer.phone.split("-")[3]}
+              </p>
+              <p>
+                {footer.email.split("@")[0]} @ {footer.email.split("@")[1]}
+              </p>
             </div>
             <div className="flex items-center gap-2 text-xl">
               <div className="w-[27px] h-[3.03px] bg-variant"></div>
@@ -38,28 +44,16 @@ const DesktopFooter = () => {
           </div>
 
           <ul className="relative text-lg font-medium flex gap-5">
-            <li>
-              <LinkItem to="about" text="About" />
-            </li>
-            <li>
-              <LinkItem to="services" text="Services" />
-            </li>
-            <li>
-              <LinkItem to="prices" text="Pricing" />
-            </li>
-            <li>
-              <LinkItem to="brands" text="Brands" />
-            </li>
-            <li>
-              <LinkItem to="contact" text="Contact" />
-            </li>
+            {nav.map((item) => (
+              <li key={item.id}>
+                <LinkItem to={item.path} text={item.title} />
+              </li>
+            ))}
           </ul>
         </div>
         <div className="flex justify-between items-end mt-20 mb-1">
           <img className="w-[400px] logo" src={ycclogo} alt="logo" />
-          <p className="font-medium">
-            © 2022 YourCasaConcierge. All right reserved.
-          </p>
+          <p className="font-medium">{footer.copyRight}</p>
         </div>
       </div>
     </>
