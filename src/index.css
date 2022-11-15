@@ -105,6 +105,13 @@ body {
           hover:shadow-lg;
 }
 
+/* MOBILE MENU TEXT */
+
+.menu-text {
+  font-size: clamp(1.5rem, 8vw, 2.5rem);
+  line-height: clamp(1rem, 5vw, 2.5rem);
+}
+
 /* 404 TEXT */
 
 .not-found {
