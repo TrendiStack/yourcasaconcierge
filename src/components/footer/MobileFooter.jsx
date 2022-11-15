@@ -17,7 +17,7 @@ const MobileFooter = () => {
       <ul className="flex justify-between my-5">
         <div className="flex flex-col gap-2">
           {nav
-            .filter((item) => item.id < 5 && item.id !== 1)
+            .filter((item) => item.id < 4)
             .map((item) => (
               <li key={item.id}>
                 <a href={item.path}>{item.title}</a>
@@ -26,7 +26,7 @@ const MobileFooter = () => {
         </div>
         <div className="flex flex-col gap-2">
           {nav
-            .filter((item) => item.id > 4 && item.id < 7)
+            .filter((item) => item.id > 3 && item.id < 7)
             .map((item) => (
               <li key={item.id}>
                 <a href={item.path}>{item.title}</a>

@@ -7,31 +7,26 @@ const content = {
   nav: [
     {
       id: 1,
-      title: "Home",
-      path: "/",
-    },
-    {
-      id: 2,
       title: "About",
       path: "about",
     },
     {
-      id: 3,
+      id: 2,
       title: "Services",
       path: "services",
     },
     {
-      id: 4,
+      id: 3,
       title: "Pricing",
       path: "pricing",
     },
     {
-      id: 5,
+      id: 4,
       title: "Brands",
       path: "brands",
     },
     {
-      id: 6,
+      id: 5,
       title: "Contact",
       path: "contact",
     },
