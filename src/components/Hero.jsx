@@ -1,4 +1,3 @@
-import React from "react";
 import headerImg from "../assets/images/header-img.jpg";
 import HeroForm from "./contact/HeroForm";
 import { motion as m } from "framer-motion";

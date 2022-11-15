@@ -1,5 +1,3 @@
-import React from "react";
-
 import MobileFooter from "./footer/MobileFooter";
 import DesktopFooter from "./footer/DesktopFooter";
 

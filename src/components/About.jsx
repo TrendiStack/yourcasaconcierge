@@ -1,4 +1,3 @@
-import React from "react";
 import DesktopAbout from "./about/DesktopAbout";
 import MobileAbout from "./about/MobileAbout";
 

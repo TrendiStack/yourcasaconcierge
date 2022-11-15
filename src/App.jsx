@@ -1,5 +1,5 @@
 import { Route, Routes } from "react-router-dom";
-import { Nav, Hero, Layout, Menu } from "./components";
+import { Nav, Hero, Layout } from "./components";
 import FormSent from "./components/contact/FormSent";
 import PageNotFound from "./components/PageNotFound";
 
