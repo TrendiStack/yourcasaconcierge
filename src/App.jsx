@@ -17,9 +17,9 @@ function App() {
               </>
             }
           />
-          <Route path="success" element={<FormSent />} />
+          <Route path="/success" element={<FormSent />} />
         </Route>
-        <Route path="*" element={<PageNotFound />} />
+        <Route path="/*" element={<PageNotFound />} />
       </Routes>
     </>
   );
