@@ -15,7 +15,6 @@ const Hero = () => {
       className="relative lg:bg-fixed w-full flex flex-col justify-center h-screen text-white"
       style={styles}
     >
-      {/* overlay gradient */}
       <div className="absolute inset-0 bg-gradient-to-r from-[#000] opacity-90 z-20" />
       <div className="relative container garamond layout-padding flex flex-col gap-3 xl:block z-30">
         <h2 className="text-xl xl:text-2xl">Lightening your load</h2>
