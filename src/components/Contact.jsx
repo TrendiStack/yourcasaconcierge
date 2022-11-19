@@ -7,7 +7,7 @@ const Contact = () => {
   const { footer } = content;
   return (
     <m.div id="contact" className="pt-10 xl:pt-0 pb-20 bg">
-      <div className="container ">
+      <div className="container layout-padding">
         <m.h2
           initial={{ opacity: 0, x: -100 }}
           animate={{ opacity: 1, x: 0 }}

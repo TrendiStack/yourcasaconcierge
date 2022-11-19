@@ -21,7 +21,7 @@ const DesktopFooter = () => {
         alt=""
         className="h-[15rem] lg:h-[25rem] w-full object-cover"
       />
-      <div className="container hidden xl:block py-5 text-[#D6DFDE]">
+      <div className="container layout-padding hidden xl:block py-5 text-[#D6DFDE]">
         <div className="flex justify-between mt-10">
           <div className="garamond">
             <div className="text-xl leading-5">

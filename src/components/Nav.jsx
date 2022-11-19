@@ -35,9 +35,9 @@ const Nav = () => {
         onClick={isOpen === "open" ? toggleMenu : null}
         className={`${bg} ${
           footervisible ? "top-[-100px]" : "top-0"
-        } fixed top-0 left-0 w-screen py-5 px-8 md:px-0 z-50 transition-all duration-500`}
+        } fixed top-0 left-0 w-screen py-5 md:px-0 z-50 transition-all duration-500`}
       >
-        <div className="container flex justify-between items-center">
+        <div className="container layout-padding flex justify-between items-center">
           <Link to="/#home">
             <img className="hidden xl:block w-[200px] logo" src={logo} alt="" />
             <h1 className="xl:hidden garamond text-white text-4xl">YCC</h1>

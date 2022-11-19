@@ -18,7 +18,11 @@ body {
 }
 
 .container {
-  @apply max-w-[1080px] 2xl:max-w-[1440px] mx-auto px-8 xl:px-0;
+  @apply max-w-[1080px] 2xl:max-w-[1440px];
+}
+
+.layout-padding {
+  @apply mx-auto px-8 xl:px-0;
 }
 
 .bg {
