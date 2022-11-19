@@ -33,11 +33,11 @@ const Services = () => {
         <h1 className="garamond header-text-variant">{data.title}</h1>
         <p className="text-2xl max-w-xl mb-5">{data.description}</p>
 
-        <div className="md:flex items-center gap-10">
+        <div className="lg:flex items-center gap-10">
           <div className="bg p-5 w-full mb-5 md:mb-0 md:max-w-[50%] xl:max-w-[80%] shadow-lg">
             <img src={imageHandler} alt={imageHandler} />
           </div>
-          <ul className="grid grid-cols-1 xl:grid-cols-2 gap-10">
+          <ul className="grid grid-cols-1 lg:grid-cols-2 gap-10">
             {data.services.map((service) => (
               <Service
                 key={service.id}
