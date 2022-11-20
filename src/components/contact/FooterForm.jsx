@@ -49,6 +49,7 @@ const FooterForm = ({
         className="text-black py-1 rounded-sm placeholder:text-gray-500 placeholder:font-serif placeholder:text-sm w-2/3 outline-[#2E4959]"
         placeholder="Enter your Email"
         onChange={(e) => setCustomer({ ...customer, email: e.target.value })}
+        required
       />
       <button
         type="submit"
