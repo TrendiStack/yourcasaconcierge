@@ -9,6 +9,7 @@ import {
 import LinkItem from "../LinkItem";
 import { useContext } from "react";
 import { RefContext } from "../../context/RefContext";
+import MailChimpForm from "../contact/MailChimpForm";
 
 const DesktopFooter = () => {
   const { footer } = content;
@@ -46,13 +47,17 @@ const DesktopFooter = () => {
             </div>
           </div>
 
-          <ul className="relative text-lg font-medium flex gap-5">
-            {nav.map((item) => (
-              <li key={item.id}>
-                <LinkItem to={item.path} text={item.title} />
-              </li>
-            ))}
-          </ul>
+          <div>
+            <ul className="relative text-lg font-medium flex gap-5">
+              {nav.map((item) => (
+                <li key={item.id}>
+                  <LinkItem to={item.path} text={item.title} />
+                </li>
+              ))}
+            </ul>
+
+            <MailChimpForm footer={true} />
+          </div>
         </div>
         <div
           ref={footerRef}

@@ -1,16 +1,9 @@
 import { useState, useEffect } from "react";
+import NewsletterToaster from "./NewsletterToaster";
 
-const HeroForm = ({ status, message, onValidated }) => {
-  const [errorStatus, setErrorStatus] = useState(null);
-  const [customer, setCustomer] = useState({
-    email: "",
-    firstName: "",
-    lastName: "",
-  });
-
+const HeroForm = ({ status, message, onValidated, customer, setCustomer }) => {
   const submit = (e) => {
     e.preventDefault();
-    setErrorStatus(status);
     try {
       if (status === "success") {
         setCustomer({
@@ -29,39 +22,17 @@ const HeroForm = ({ status, message, onValidated }) => {
           FNAME: firstName,
           LNAME: lastName,
         });
+      console.log("submitting");
     } catch (error) {
       console.log(error);
     }
   };
-
-  useEffect(() => {
-    if (status) {
-      setTimeout(() => {
-        setErrorStatus(null);
-      }, 5000);
-    }
-  }, [status]);
-
   return (
     <form
       onSubmit={submit}
-      className="hidden absolute bottom-0 xl:flex justify-center border-y border-white w-full z-30"
+      className="hidden absolute bottom-0 xl:block border-y border-white w-full z-30"
     >
-      <div
-        className={`fixed w-auto top-0 bg-variant-2 text-center text-xl p-3 garamond 
-            ${errorStatus ? "top-0" : "-top-32"} transition-all duration-1000
-          `}
-      >
-        <span className="animate-pulse">
-          {status === "sending"
-            ? "Sending..."
-            : status === "error"
-            ? message
-            : status === "success"
-            ? message
-            : ""}
-        </span>
-      </div>
+      <NewsletterToaster status={status} message={message} />
       <div className="container layout-padding flex">
         <input
           type="text"
@@ -90,7 +61,7 @@ const HeroForm = ({ status, message, onValidated }) => {
           required
         />
         <button className="py-5 bg-transparent placeholder:text-white w-full ">
-          Sign Up
+          Subscribe
         </button>
       </div>
     </form>

@@ -6,6 +6,7 @@ import {
   FaInstagram,
   FaLinkedin,
 } from "react-icons/fa";
+import MailChimpForm from "../contact/MailChimpForm";
 
 const MobileFooter = () => {
   const { footer } = content;
@@ -45,7 +46,7 @@ const MobileFooter = () => {
           <br /> {footer.email}
         </p>
       </div>
-      <div className="flex justify-between mt-2">
+      <div className="flex justify-between my-2">
         <div className="flex items-center gap-2 ml-2">
           <div className="w-[27px] h-[3.03px] bg-[#DAD7CD]"></div>
           <p>Follow us</p>
@@ -57,6 +58,7 @@ const MobileFooter = () => {
           <FaLinkedin className="text-xl" />
         </div>
       </div>
+      <MailChimpForm footer mobile />
       <p className="text-center pt-8 font-light">{footer.copyRight}</p>
     </div>
   );
