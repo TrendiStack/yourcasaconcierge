@@ -37,7 +37,7 @@ const HeroForm = ({ status, message, onValidated, customer, setCustomer }) => {
         <input
           type="text"
           placeholder="First Name"
-          className="border-r border-white py-5 bg-transparent placeholder:text-white"
+          className="border-r border-white py-5 bg-transparent placeholder:text-white outline-[#D6DFDE]"
           value={customer.firstName}
           onChange={(e) =>
             setCustomer({ ...customer, firstName: e.target.value })
@@ -46,7 +46,7 @@ const HeroForm = ({ status, message, onValidated, customer, setCustomer }) => {
         <input
           type="text"
           placeholder="Last Name"
-          className="border-r border-white pl-5 py-5 bg-transparent placeholder:text-white"
+          className="border-r border-white pl-5 py-5 bg-transparent placeholder:text-white outline-[#D6DFDE]"
           value={customer.lastName}
           onChange={(e) =>
             setCustomer({ ...customer, lastName: e.target.value })
@@ -55,12 +55,12 @@ const HeroForm = ({ status, message, onValidated, customer, setCustomer }) => {
         <input
           type="email"
           placeholder="Email"
-          className="border-r border-white pl-5 py-5 bg-transparent placeholder:text-white"
+          className="border-r border-white pl-5 py-5 bg-transparent placeholder:text-white outline-[#D6DFDE]"
           value={customer.email}
           onChange={(e) => setCustomer({ ...customer, email: e.target.value })}
           required
         />
-        <button className="py-5 bg-transparent placeholder:text-white w-full ">
+        <button className="py-5 bg-transparent placeholder:text-white outline-[#D6DFDE] w-full ">
           Subscribe
         </button>
       </div>
