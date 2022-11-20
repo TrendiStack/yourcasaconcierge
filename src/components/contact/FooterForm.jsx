@@ -1,4 +1,3 @@
-import React from "react";
 import NewsletterToaster from "./NewsletterToaster";
 
 const FooterForm = ({
@@ -15,14 +14,10 @@ const FooterForm = ({
       if (status === "success") {
         setCustomer({
           email: "",
-          firstName: "",
-          lastName: "",
         });
       }
-      const { email, firstName, lastName } = customer;
+      const { email } = customer;
       email &&
-        firstName &&
-        lastName &&
         email.indexOf("@") > -1 &&
         onValidated({
           EMAIL: email,
@@ -37,7 +32,7 @@ const FooterForm = ({
       onSubmit={submit}
       className={mobile ? "text-black" : "text-[#D6DFDE]"}
     >
-      <div className="xl:hidden">
+      <div className="text-white">
         <NewsletterToaster status={status} message={message} />
       </div>
 
