@@ -22,7 +22,7 @@ const Menu = () => {
         transition={{ duration: 0.5 }}
         className={`
         fixed top-0 left-0 h-screen w-4/5 bg-white z-40 shadow-lg
-    lg:hidden bg-variant garamond text-white menu-text py-28 px-8`}
+    lg:hidden bg-variant-2 garamond text-white menu-text py-28 px-8`}
       >
         <ul className="flex flex-col gap-10">
           {nav.map((item) => {

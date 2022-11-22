@@ -1,4 +1,3 @@
-import { useState, useEffect } from "react";
 import NewsletterToaster from "./NewsletterToaster";
 
 const HeroForm = ({ status, message, onValidated, customer, setCustomer }) => {
