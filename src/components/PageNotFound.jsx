@@ -8,7 +8,7 @@ const PageNotFound = () => {
     <div className="flex flex-col items-center">
       <img
         src={waves}
-        alt="waves"
+        alt="waves background"
         className="absolute top-0 left-0 w-full h-full object-cover z-[-1]"
       />
       <m.img

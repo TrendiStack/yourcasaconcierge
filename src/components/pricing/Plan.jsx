@@ -21,7 +21,6 @@ const Plan = ({ reversed, image, title, desc }) => {
           reversed ? "md:ml-10" : "md:mr-10"
         }`}
         style={styles}
-        alt=""
       />
       <div className="relative flex flex-col gap-5 ">
         <m.p

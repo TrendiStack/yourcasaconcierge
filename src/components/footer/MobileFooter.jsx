@@ -13,7 +13,7 @@ const MobileFooter = () => {
   const { nav } = content;
   return (
     <div className="container xl:hidden py-10 px-8">
-      <img className="w-[200px] logo" src={ycclogoblack} alt="logo" />
+      <img className="w-[200px] logo" src={ycclogoblack} alt="logo black" />
 
       <ul className="flex justify-between my-5">
         <div className="flex flex-col gap-2">
@@ -59,7 +59,7 @@ const MobileFooter = () => {
         </div>
       </div>
       <MailChimpForm footer mobile />
-      <p className="text-center pt-8 font-light">{footer.copyRight}</p>
+      <p className="text-center pt-8">{footer.copyRight}</p>
     </div>
   );
 };

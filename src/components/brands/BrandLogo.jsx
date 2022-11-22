@@ -25,7 +25,7 @@ const BrandLogo = ({ logo, borderRight, borderBottom }) => {
             ? homeaway
             : vrbo
         }
-        alt="airbnb-logo"
+        alt={logo}
         className="w-24 md:w-36 xl:w-auto"
       />
     </div>

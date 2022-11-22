@@ -30,7 +30,6 @@ const DesktopAbout = () => {
         transition={{ duration: 1.5, delay: 1 }}
         className="relative h-[70%] w-[70%] 2xl:w-full shadow-lg"
         style={styles}
-        loading="lazy"
       >
         <m.p
           initial={{ opacity: 1, y: 100 }}

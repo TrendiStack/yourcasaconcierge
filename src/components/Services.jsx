@@ -55,36 +55,3 @@ const Services = () => {
 };
 
 export default Services;
-
-{
-  /* <h2 className="text-6xl garamond text-[#23372D] pt-10">Services</h2>
-        <p className="text-xl xl:text-5xl max-w-[850px] my-5">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad{" "}
-        </p>
-        <div className="flex justify-between w-full my-5">
-          <p>Property listing</p>
-          <p>Price Optimization</p>
-          <p>Client Support</p>
-          <p>Cleaning Service</p>
-          <p>Guest Screening</p>
-          <p>Re-stocking</p>
-        </div>
-        <div className="flex flex-col xl:flex-row justify-between items-center bg-[#608C68] xl:pl-10">
-          <div>
-            <h3 className="text-2xl mb-3">Cleaning Service</h3>
-            <p className="max-w-[577px] text-xl text-justify">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo
-            </p>
-          </div>
-
-          <img
-            src={livingRoom}
-            alt=""
-            className="w-[400px] h-[350px] xl:place-self-end"
-          />
-        </div> */
-}

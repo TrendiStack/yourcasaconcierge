@@ -19,7 +19,7 @@ const DesktopFooter = () => {
     <>
       <img
         src="https://images.unsplash.com/photo-1491489226161-1d38cb39ec64?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2500&q=80"
-        alt=""
+        alt="sauna"
         className="h-[15rem] lg:h-[25rem] w-full object-cover"
       />
       <div className="container layout-padding hidden xl:block py-5 text-[#D6DFDE]">
@@ -63,7 +63,7 @@ const DesktopFooter = () => {
           ref={footerRef}
           className="flex justify-between items-end mt-20 mb-1"
         >
-          <img className="w-[400px] logo" src={ycclogo} alt="logo" />
+          <img className="w-[400px] logo" src={ycclogo} alt="logo white" />
           <p className="font-medium">{footer.copyRight}</p>
         </div>
       </div>
