@@ -75,12 +75,14 @@ const DesktopFooter = () => {
           ref={footerRef}
           className="flex justify-between items-end mt-20 mb-1"
         >
-          <m.img
-            variants={generic}
-            className="w-[400px] logo"
-            src={ycclogo}
-            alt="logo white"
-          />
+          <a href="#">
+            <m.img
+              variants={generic}
+              className="w-[400px] logo"
+              src={ycclogo}
+              alt="logo white"
+            />
+          </a>
           <m.p variants={generic} className="font-medium">
             {footer.copyRight}
           </m.p>
