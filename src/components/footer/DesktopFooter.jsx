@@ -9,12 +9,15 @@ import {
 import LinkItem from "../LinkItem";
 import { useContext } from "react";
 import { RefContext } from "../../context/RefContext";
+import { AnimationContext } from "../../context/AnimationContext";
 import MailChimpForm from "../contact/MailChimpForm";
+import { motion as m } from "framer-motion";
 
 const DesktopFooter = () => {
   const { footer } = content;
   const { nav } = content;
   const { footerRef } = useContext(RefContext);
+  const { generic, pricing } = useContext(AnimationContext);
   return (
     <>
       <img
@@ -23,8 +26,14 @@ const DesktopFooter = () => {
         className="h-[15rem] lg:h-[25rem] w-full object-cover"
       />
       <div className="container layout-padding hidden xl:block py-5 text-[#D6DFDE]">
-        <div className="flex justify-between mt-10">
-          <div className="garamond">
+        <m.div
+          initial={"hidden"}
+          whileInView={"visible"}
+          viewport={{ once: true, amount: 0.5 }}
+          transition={{ staggerChildren: 0.5 }}
+          className="flex justify-between mt-10"
+        >
+          <m.div variants={generic} className="garamond">
             <div className="text-xl leading-5">
               <p>{footer.address}</p>
               <p>
@@ -39,15 +48,15 @@ const DesktopFooter = () => {
               <div className="w-[27px] h-[3.03px] bg-variant"></div>
               <p>Follow us</p>
             </div>
-            <div className="flex text-lg gap-2">
+            <m.div variants={generic} className="flex text-lg gap-2">
               <FaFacebookF />
               <FaTwitter />
               <FaInstagram />
               <FaLinkedin />
-            </div>
-          </div>
+            </m.div>
+          </m.div>
 
-          <div>
+          <m.div variants={generic}>
             <ul className="relative text-lg font-medium flex gap-5">
               {nav.map((item) => (
                 <li key={item.id}>
@@ -57,15 +66,25 @@ const DesktopFooter = () => {
             </ul>
 
             <MailChimpForm footer={true} />
-          </div>
-        </div>
-        <div
+          </m.div>
+        </m.div>
+        <m.div
+          initial={"hidden"}
+          whileInView={"visible"}
+          viewport={{ once: true, amount: 0.5 }}
           ref={footerRef}
           className="flex justify-between items-end mt-20 mb-1"
         >
-          <img className="w-[400px] logo" src={ycclogo} alt="logo white" />
-          <p className="font-medium">{footer.copyRight}</p>
-        </div>
+          <m.img
+            variants={generic}
+            className="w-[400px] logo"
+            src={ycclogo}
+            alt="logo white"
+          />
+          <m.p variants={generic} className="font-medium">
+            {footer.copyRight}
+          </m.p>
+        </m.div>
       </div>
     </>
   );

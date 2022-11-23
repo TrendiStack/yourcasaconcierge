@@ -1,4 +1,5 @@
 import NewsletterToaster from "./NewsletterToaster";
+import { motion as m } from "framer-motion";
 
 const HeroForm = ({ status, message, onValidated, customer, setCustomer }) => {
   const submit = (e) => {
@@ -27,7 +28,10 @@ const HeroForm = ({ status, message, onValidated, customer, setCustomer }) => {
     }
   };
   return (
-    <form
+    <m.form
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 1, delay: 0.5 }}
       onSubmit={submit}
       className="hidden absolute bottom-0 xl:block border-y border-white w-full z-30"
     >
@@ -63,7 +67,7 @@ const HeroForm = ({ status, message, onValidated, customer, setCustomer }) => {
           Subscribe
         </button>
       </div>
-    </form>
+    </m.form>
   );
 };
 

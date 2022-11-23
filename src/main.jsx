@@ -4,6 +4,7 @@ import App from "./App";
 import { BrowserRouter } from "react-router-dom";
 import { MenuProvider } from "./context/MenuContext";
 import { RefProvider } from "./context/RefContext";
+import { AnimationProvider } from "./context/AnimationContext";
 
 import "./index.css";
 
@@ -12,7 +13,9 @@ ReactDOM.createRoot(document.getElementById("root")).render(
     <BrowserRouter>
       <RefProvider>
         <MenuProvider>
-          <App />
+          <AnimationProvider>
+            <App />
+          </AnimationProvider>
         </MenuProvider>
       </RefProvider>
     </BrowserRouter>

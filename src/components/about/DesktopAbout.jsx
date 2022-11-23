@@ -1,11 +1,12 @@
-import { useRef } from "react";
+import { motion as m } from "framer-motion";
 import content from "../../content";
 import livingRoomDark from "../../assets/images/content/living-room-dark.jpg";
-import { motion as m } from "framer-motion";
+import { useContext } from "react";
+import { AnimationContext } from "../../context/AnimationContext";
 
 const DesktopAbout = () => {
-  const ref = useRef();
   const { about } = content;
+  const { generic, absoluteText } = useContext(AnimationContext);
 
   const styles = {
     backgroundImage: `url(${livingRoomDark})`,
@@ -15,32 +16,29 @@ const DesktopAbout = () => {
   };
 
   return (
-    <div ref={ref} className="container hidden xl:block h-screen">
-      <m.h1
-        initial={{ opacity: 0, y: 100 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1.5, delay: 0.5 }}
-        className="header-text"
-      >
+    <m.div
+      initial={"hidden"}
+      whileInView={"visible"}
+      viewport={{ once: true, amount: 0.5 }}
+      transition={{ staggerChildren: 0.5 }}
+      className="container hidden xl:block h-screen"
+    >
+      <m.h1 variants={generic} className="header-text">
         {about.title}
       </m.h1>
       <m.div
-        initial={{ opacity: 0, y: 100 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1.5, delay: 1 }}
+        variants={generic}
         className="relative h-[70%] w-[70%] 2xl:w-full shadow-lg"
         style={styles}
       >
         <m.p
-          initial={{ opacity: 1, y: 100 }}
-          animate={{ opacity: 1, y: -100 }}
-          transition={{ duration: 1.5, delay: 1.5 }}
+          variants={absoluteText}
           className="absolute top-[52%] translate-y-[-50%] left-[70%] w-[500px] text-justify 2xl:text-lg font-bold text-[#23372D] 2xl:leading-8"
         >
           {about.description}
         </m.p>
       </m.div>
-    </div>
+    </m.div>
   );
 };
 

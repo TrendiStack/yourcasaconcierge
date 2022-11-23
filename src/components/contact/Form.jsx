@@ -1,11 +1,13 @@
-import { useRef } from "react";
+import { useContext, useRef } from "react";
 import { useFormik } from "formik";
 import * as yup from "yup";
 import { useNavigate } from "react-router-dom";
 import emailjs from "@emailjs/browser";
 import { motion as m } from "framer-motion";
+import { AnimationContext } from "../../context/AnimationContext";
 
 const Form = () => {
+  const { pricing } = useContext(AnimationContext);
   const formRef = useRef();
   const navigate = useNavigate();
   const sendEmail = () => {
@@ -65,9 +67,7 @@ const Form = () => {
   const { firstName, lastName, email, phone, inquiry } = formik.values;
   return (
     <m.form
-      initial={{ opacity: 0, x: 100 }}
-      animate={{ opacity: 1, x: 0 }}
-      transition={{ duration: 1.5, delay: 0.5 }}
+      variants={pricing}
       ref={formRef}
       onSubmit={formik.handleSubmit}
       className="relative"
