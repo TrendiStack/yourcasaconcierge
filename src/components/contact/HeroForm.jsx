@@ -1,28 +1,28 @@
-import NewsletterToaster from "./NewsletterToaster";
-import { motion as m } from "framer-motion";
+import NewsletterToaster from './NewsletterToaster';
+import { motion as m } from 'framer-motion';
 
 const HeroForm = ({ status, message, onValidated, customer, setCustomer }) => {
-  const submit = (e) => {
+  const submit = e => {
     e.preventDefault();
     try {
-      if (status === "success") {
+      if (status === 'success') {
         setCustomer({
-          email: "",
-          firstName: "",
-          lastName: "",
+          email: '',
+          firstName: '',
+          lastName: '',
         });
       }
       const { email, firstName, lastName } = customer;
       email &&
         firstName &&
         lastName &&
-        email.indexOf("@") > -1 &&
+        email.indexOf('@') > -1 &&
         onValidated({
           EMAIL: email,
           FNAME: firstName,
           LNAME: lastName,
         });
-      console.log("submitting");
+      console.log('submitting');
     } catch (error) {
       console.log(error);
     }
@@ -42,29 +42,29 @@ const HeroForm = ({ status, message, onValidated, customer, setCustomer }) => {
           placeholder="First Name"
           className="border-r border-white py-5 bg-transparent placeholder:text-white outline-[#D6DFDE]"
           value={customer.firstName}
-          onChange={(e) =>
+          onChange={e =>
             setCustomer({ ...customer, firstName: e.target.value })
           }
+          required
         />
         <input
           type="text"
           placeholder="Last Name"
           className="border-r border-white pl-5 py-5 bg-transparent placeholder:text-white outline-[#D6DFDE]"
           value={customer.lastName}
-          onChange={(e) =>
-            setCustomer({ ...customer, lastName: e.target.value })
-          }
+          onChange={e => setCustomer({ ...customer, lastName: e.target.value })}
+          required
         />
         <input
           type="email"
           placeholder="Email"
           className="border-r border-white pl-5 py-5 bg-transparent placeholder:text-white outline-[#D6DFDE]"
           value={customer.email}
-          onChange={(e) => setCustomer({ ...customer, email: e.target.value })}
+          onChange={e => setCustomer({ ...customer, email: e.target.value })}
           required
         />
         <button className="py-5 bg-transparent placeholder:text-white outline-[#D6DFDE] w-full ">
-          Subscribe
+          Stay Up to Date!
         </button>
       </div>
     </m.form>

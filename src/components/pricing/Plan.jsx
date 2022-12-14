@@ -1,6 +1,7 @@
-import { motion as m } from "framer-motion";
-import { useContext, useEffect } from "react";
-import { AnimationContext } from "../../context/AnimationContext";
+import { motion as m } from 'framer-motion';
+import { useContext, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import { AnimationContext } from '../../context/AnimationContext';
 
 const Plan = ({ reversed, image, title, desc }) => {
   const { setReversed, pricing } = useContext(AnimationContext);
@@ -10,24 +11,24 @@ const Plan = ({ reversed, image, title, desc }) => {
 
   const styles = {
     backgroundImage: `url(${image})`,
-    backgroundRepeat: "no-repeat",
-    backgroundSize: "cover",
-    backgroundPosition: "center",
+    backgroundRepeat: 'no-repeat',
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
   };
   return (
     <m.div
-      initial={"hidden"}
-      whileInView={"visible"}
+      initial={'hidden'}
+      whileInView={'visible'}
       viewport={{ once: true, amount: 0.5 }}
       transition={{ staggerChildren: 0.5 }}
       className={`flex ${
-        reversed ? "md:flex-row-reverse" : "md:flex-row"
+        reversed ? 'md:flex-row-reverse' : 'md:flex-row'
       } flex-col md:items-center md:justify-between gap-10`}
     >
       <m.div
         variants={pricing}
         className={`w-full md:w-[45%] 2xl:w-[55%] h-[300px] xl:h-[500px] object-cover shadow-lg ${
-          reversed ? "md:ml-10" : "md:mr-10"
+          reversed ? 'md:ml-10' : 'md:mr-10'
         }`}
         style={styles}
       />
@@ -41,12 +42,13 @@ const Plan = ({ reversed, image, title, desc }) => {
         <m.p variants={pricing} className="max-w-[403px] text-[20px]">
           {desc}
         </m.p>
-        <m.button
+        <m.a
+          href="#contact"
           variants={pricing}
           className="pricing-btn-mobile xl:pricing-btn"
         >
           Get Started
-        </m.button>
+        </m.a>
       </m.div>
     </m.div>
   );

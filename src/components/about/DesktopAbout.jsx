@@ -1,8 +1,8 @@
-import { motion as m } from "framer-motion";
-import content from "../../content";
-import livingRoomDark from "../../assets/images/content/living-room-dark.jpg";
-import { useContext } from "react";
-import { AnimationContext } from "../../context/AnimationContext";
+import { motion as m } from 'framer-motion';
+import content from '../../content';
+import livingRoomDark from '../../assets/images/content/living-room-dark.jpg';
+import { useContext } from 'react';
+import { AnimationContext } from '../../context/AnimationContext';
 
 const DesktopAbout = () => {
   const { about } = content;
@@ -10,15 +10,15 @@ const DesktopAbout = () => {
 
   const styles = {
     backgroundImage: `url(${livingRoomDark})`,
-    backgroundRepeat: "no-repeat",
-    backgroundSize: "cover",
-    backgroundPosition: "center",
+    backgroundRepeat: 'no-repeat',
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
   };
 
   return (
     <m.div
-      initial={"hidden"}
-      whileInView={"visible"}
+      initial={'hidden'}
+      whileInView={'visible'}
       viewport={{ once: true, amount: 0.5 }}
       transition={{ staggerChildren: 0.5 }}
       className="container hidden xl:block h-screen"
@@ -33,7 +33,7 @@ const DesktopAbout = () => {
       >
         <m.p
           variants={absoluteText}
-          className="absolute top-[52%] translate-y-[-50%] left-[70%] w-[500px] text-justify 2xl:text-lg font-bold text-[#23372D] 2xl:leading-8"
+          className="absolute top-[35%] translate-y-[-50%] left-[70%] w-[500px] text-justify 2xl:text-lg font-medium text-black 2xl:leading-8"
         >
           {about.description}
         </m.p>
