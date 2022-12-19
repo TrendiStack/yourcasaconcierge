@@ -1,22 +1,22 @@
-import headerImg from "../assets/images/header-img.jpg";
-import MailChimpForm from "./contact/MailChimpForm";
-import { motion as m } from "framer-motion";
-import { useContext } from "react";
-import { AnimationContext } from "../context/AnimationContext";
+import headerImg from '../assets/images/header-img-5.jpg';
+import MailChimpForm from './contact/MailChimpForm';
+import { motion as m } from 'framer-motion';
+import { useContext } from 'react';
+import { AnimationContext } from '../context/AnimationContext';
 
 const Hero = () => {
   const { generic } = useContext(AnimationContext);
   const styles = {
     backgroundImage: `url(${headerImg})`,
-    backgroundRepeat: "no-repeat",
-    backgroundSize: "cover",
-    backgroundPosition: "center",
+    backgroundRepeat: 'no-repeat',
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
   };
   return (
     <m.header
       id="home"
-      initial={"hidden"}
-      whileInView={"visible"}
+      initial={'hidden'}
+      whileInView={'visible'}
       viewport={{ once: true, amount: 0.5 }}
       transition={{ staggerChildren: 0.5 }}
       className="relative lg:bg-fixed w-full flex flex-col justify-center h-[100.5vh] text-white"
@@ -28,10 +28,10 @@ const Hero = () => {
         className="relative container garamond layout-padding flex flex-col gap-3 xl:block z-30"
       >
         <m.h2 variants={generic} className="text-xl xl:text-2xl">
-          Lightening your load
+          At your service across
         </m.h2>
         <m.h1 variants={generic} className="text-5xl xl:text-8xl">
-          With great service
+          the Greater Toronto Area
         </m.h1>
         <m.button
           variants={generic}

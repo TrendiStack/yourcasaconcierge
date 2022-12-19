@@ -1,14 +1,14 @@
-import { motion as m } from "framer-motion";
-import { useContext } from "react";
-import { AnimationContext } from "../context/AnimationContext";
-import BrandLogo from "./brands/BrandLogo";
+import { motion as m } from 'framer-motion';
+import { useContext } from 'react';
+import { AnimationContext } from '../context/AnimationContext';
+import BrandLogo from './brands/BrandLogo';
 
 const Brands = () => {
   const { generic } = useContext(AnimationContext);
   return (
     <m.div
-      initial={"hidden"}
-      whileInView={"visible"}
+      initial={'hidden'}
+      whileInView={'visible'}
       viewport={{ once: true, amount: 0.5 }}
       transition={{ staggerChildren: 0.5 }}
       id="brands"
@@ -18,10 +18,9 @@ const Brands = () => {
         variants={generic}
         className="container layout-padding grid grid-cols-2"
       >
-        <div className="flex items-center justify-center h-40 w-full border-b border-r border-black">
-          <p className="garamond md:text-lg xl:text-3xl text-center mr-2">
-            We work with all your
-            <br /> favourites
+        <div className="flex items-center justify-center h-40 xl:h-52 w-full border-b border-r border-black">
+          <p className="garamond md:text-lg xl:text-5xl text-center mr-2 text-white">
+            The partners we trust
           </p>
         </div>
         <BrandLogo logo="airbnb" borderBottom />

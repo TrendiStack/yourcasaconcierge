@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 import {
   About,
   Services,
@@ -6,7 +6,7 @@ import {
   Brands,
   Contact,
   Footer,
-} from "../components";
+} from '../components';
 const Layout = () => {
   return (
     <div className="overflow-hidden">

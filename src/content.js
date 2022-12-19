@@ -22,8 +22,8 @@ const content = {
     },
     {
       id: 4,
-      title: 'Brands',
-      path: 'brands',
+      title: 'Partners',
+      path: 'partners',
     },
     {
       id: 5,
@@ -32,8 +32,11 @@ const content = {
     },
   ],
   about: {
-    title: 'About',
-    description: `Our company is a full-service property management company that specializes in vacation rentals in the Greater Toronto Area. We have a team of expert property managers who are dedicated to providing exceptional service to both property owners and guests. Our services include managing guest bookings, cleaning and maintaining properties, and providing 24/7 support to ensure that both property owners and guests have a positive experience. We are committed to helping property owners maximize their rental income and take the hassle out of managing a vacation rental property. Whether you're a property owner looking for help managing your vacation rental, or a guest looking for a comfortable and convenient place to stay in Toronto, our team is here to help.`,
+    titleOne: 'About',
+    paragraphOne: `Our company is a full-service property management company that specializes in vacation rentals in the Greater Toronto Area. We have a team of expert property managers who are dedicated to providing exceptional service to both property owners and guests. `,
+    titleTwo: 'Our Mission',
+    paragraphTwo:
+      "We are committed to helping property owners maximize their rental income and take the hassle out of managing a vacation rental property. Whether you're a property owner looking for help managing your vacation rental, or a guest looking for a comfortable and convenient place to stay in Toronto, our team is here to help.",
   },
 
   services: {
@@ -87,18 +90,12 @@ const content = {
       {
         id: 1,
         title: 'Essentials',
-        image: pricingPlanOne,
-        description: `This plan would include the basic services required for managing a property, such as bookings management, cleaning, and 24/7 support for guests`,
-      },
-      {
-        id: 2,
-        title: 'Deluxe',
         image: pricingPlanTwo,
-        description: `This plan would include a more comprehensive range of services, such as marketing and advertising support, property inspections and maintenance, and personalized consultations with property managers`,
+        description: `This plan would include the basic services required for managing a property, such as bookings management, cleaning, and 24/7 support for guests`,
       },
 
       {
-        id: 3,
+        id: 2,
         title: 'Premium',
         image: pricingPlanThree,
         description: `This plan would offer the most comprehensive support and assistance, including additional marketing and advertising support, as well as personalized consultations with property managers to help maximize rental income`,
@@ -108,7 +105,8 @@ const content = {
 
   contact: {
     title: 'Contact',
-    subtitle: 'Did we peak your interest',
+    subtitle:
+      'Please leave us with your contact information and someone from our team will reach out to you!',
     description: `We are truly passionate about making propery rental and management
               as easy as possible if you are too, fill out the form on screen to
               get in contact with us`,

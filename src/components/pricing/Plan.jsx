@@ -20,7 +20,7 @@ const Plan = ({ reversed, image, title, desc }) => {
       initial={'hidden'}
       whileInView={'visible'}
       viewport={{ once: true, amount: 0.5 }}
-      transition={{ staggerChildren: 0.5 }}
+      transition={{ staggerChildren: 0.1 }}
       className={`flex ${
         reversed ? 'md:flex-row-reverse' : 'md:flex-row'
       } flex-col md:items-center md:justify-between gap-10`}

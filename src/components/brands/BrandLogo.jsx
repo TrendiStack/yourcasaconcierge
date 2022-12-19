@@ -4,24 +4,24 @@ import {
   expedia,
   homeaway,
   vrbo,
-} from "../../assets/images/brands";
+} from '../../assets/images/brands';
 
 const BrandLogo = ({ logo, borderRight, borderBottom }) => {
   return (
     <div
-      className={`flex items-center justify-center h-40 w-full 
-      ${borderBottom ? "border-b" : ""}
-      ${borderRight && "border-r"} border-black`}
+      className={`flex items-center justify-center h-40 xl:h-52 w-full 
+      ${borderBottom ? 'border-b' : ''}
+      ${borderRight && 'border-r'} border-black`}
     >
       <img
         src={
-          logo === "airbnb"
+          logo === 'airbnb'
             ? airbnb
-            : logo === "booking"
+            : logo === 'booking'
             ? booking
-            : logo === "expedia"
+            : logo === 'expedia'
             ? expedia
-            : logo === "homeaway"
+            : logo === 'homeaway'
             ? homeaway
             : vrbo
         }

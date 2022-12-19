@@ -1,15 +1,15 @@
-import { useContext, useState, useEffect } from "react";
-import { motion as m } from "framer-motion";
-import { MenuContext } from "../context/MenuContext";
-import { RefContext } from "../context/RefContext";
-import { HashLink as Link } from "react-router-hash-link";
-import { Outlet } from "react-router-dom";
-import LinkItem from "./LinkItem";
-import Menu from "./Menu";
-import content from "../content";
-import logo from "../assets/images/ycclogo.svg";
-import smallLogo from "../assets/images/smallLogo.svg";
-import { AnimationContext } from "../context/AnimationContext";
+import { useContext, useState, useEffect } from 'react';
+import { motion as m } from 'framer-motion';
+import { MenuContext } from '../context/MenuContext';
+import { RefContext } from '../context/RefContext';
+import { HashLink as Link } from 'react-router-hash-link';
+import { Outlet } from 'react-router-dom';
+import LinkItem from './LinkItem';
+import Menu from './Menu';
+import content from '../content';
+import logo from '../assets/images/ycclogo.svg';
+import smallLogo from '../assets/images/smallLogo.svg';
+import { AnimationContext } from '../context/AnimationContext';
 
 const Nav = () => {
   const { isOpen, toggleMenu } = useContext(MenuContext);
@@ -19,19 +19,19 @@ const Nav = () => {
   const [bg, setBg] = useState();
   const { nav } = content;
   useEffect(() => {
-    window.addEventListener("scroll", () => {
-      setBg(window.scrollY > 0 ? "bg-variant-2" : "bg-transparent");
+    window.addEventListener('scroll', () => {
+      setBg(window.scrollY > 0 ? 'bg-variant-2' : 'bg-transparent');
     });
     setBg(
-      isOpen === "open"
-        ? "bg-transparent"
+      isOpen === 'open'
+        ? 'bg-transparent'
         : window.scrollY > 0
-        ? "bg-variant-2"
-        : "bg-transparent"
+        ? 'bg-variant-2'
+        : 'bg-transparent'
     );
 
     return () => {
-      window.removeEventListener("scroll", () => {});
+      window.removeEventListener('scroll', () => {});
     };
   }, [isOpen]);
 
@@ -39,12 +39,12 @@ const Nav = () => {
     <>
       <Menu />
       <m.nav
-        onClick={isOpen === "open" ? toggleMenu : null}
+        onClick={isOpen === 'open' ? toggleMenu : null}
         className={`${bg} ${
-          footervisible ? "top-[-100px]" : "top-0"
+          footervisible ? 'top-[-130px]' : 'top-0'
         } fixed top-0 left-0 w-screen py-5 md:px-0 z-50 transition-all duration-500`}
-        initial={"hidden"}
-        whileInView={"visible"}
+        initial={'hidden'}
+        whileInView={'visible'}
         viewport={{ once: true, amount: 0.5 }}
         transition={{ staggerChildren: 0.5 }}
       >
@@ -54,7 +54,7 @@ const Nav = () => {
         >
           <Link to="/#home">
             <img
-              className="hidden xl:block w-[200px]"
+              className="hidden xl:block w-[250px]"
               src={logo}
               alt="large logo"
             />
@@ -64,7 +64,7 @@ const Nav = () => {
               alt="small logo"
             />
           </Link>
-          <ul className="hidden relative xl:flex gap-3 text-white text-md font-light">
+          <ul className="hidden relative xl:flex gap-3 text-white text-md font-normal text-lg ">
             {nav.map((item, index) => {
               return (
                 <m.li variants={generic} key={item.id}>

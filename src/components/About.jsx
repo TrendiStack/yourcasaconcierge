@@ -1,10 +1,8 @@
-import DesktopAbout from "./about/DesktopAbout";
-import MobileAbout from "./about/MobileAbout";
+import DesktopAbout from './about/DesktopAbout';
 
 const About = () => {
   return (
-    <div id="about" className="relative flex flex-col items-center bg">
-      <MobileAbout />
+    <div id="about" className="bg">
       <DesktopAbout />
     </div>
   );

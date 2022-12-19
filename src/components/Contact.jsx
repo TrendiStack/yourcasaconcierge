@@ -1,8 +1,8 @@
-import content from "../content";
-import Form from "./contact/Form";
-import { motion as m } from "framer-motion";
-import { useContext } from "react";
-import { AnimationContext } from "../context/AnimationContext";
+import content from '../content';
+import Form from './contact/Form';
+import { motion as m } from 'framer-motion';
+import { useContext } from 'react';
+import { AnimationContext } from '../context/AnimationContext';
 
 const Contact = () => {
   const { contact } = content;
@@ -10,10 +10,10 @@ const Contact = () => {
   const { pricing } = useContext(AnimationContext);
   return (
     <m.div
-      initial={"hidden"}
-      whileInView={"visible"}
+      initial={'hidden'}
+      whileInView={'visible'}
       viewport={{ once: true, amount: 0.5 }}
-      transition={{ staggerChildren: 0.5 }}
+      transition={{ staggerChildren: 0.1 }}
       id="contact"
       className="pt-10 xl:pt-0 pb-20 bg"
     >
@@ -31,7 +31,7 @@ const Contact = () => {
           <div className="text-left">
             <m.h2
               variants={pricing}
-              className="hidden garamond text-2xl xl:block my-5"
+              className="hidden garamond text-2xl xl:block my-5 text-center"
             >
               {contact.subtitle}
             </m.h2>
