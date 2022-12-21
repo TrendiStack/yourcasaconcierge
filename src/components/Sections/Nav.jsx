@@ -1,15 +1,15 @@
 import { useContext, useState, useEffect } from 'react';
 import { motion as m } from 'framer-motion';
-import { MenuContext } from '../context/MenuContext';
-import { RefContext } from '../context/RefContext';
+import { MenuContext } from '../../context/MenuContext';
+import { RefContext } from '../../context/RefContext';
 import { HashLink as Link } from 'react-router-hash-link';
 import { Outlet } from 'react-router-dom';
-import LinkItem from './LinkItem';
-import Menu from './Menu';
-import content from '../content';
-import logo from '../assets/images/ycclogo.svg';
-import smallLogo from '../assets/images/smallLogo.svg';
-import { AnimationContext } from '../context/AnimationContext';
+import LinkItem from '../LinkItem';
+import Menu from '../Menu';
+import content from '../../content';
+import logo from '../../assets/images/ycclogo.svg';
+import smallLogo from '../../assets/images/smallLogo.svg';
+import { AnimationContext } from '../../context/AnimationContext';
 
 const Nav = () => {
   const { isOpen, toggleMenu } = useContext(MenuContext);
@@ -20,13 +20,13 @@ const Nav = () => {
   const { nav } = content;
   useEffect(() => {
     window.addEventListener('scroll', () => {
-      setBg(window.scrollY > 0 ? 'bg-variant-2' : 'bg-transparent');
+      setBg(window.scrollY > 0 ? 'bg-dark' : 'bg-transparent');
     });
     setBg(
       isOpen === 'open'
         ? 'bg-transparent'
         : window.scrollY > 0
-        ? 'bg-variant-2'
+        ? 'bg-dark'
         : 'bg-transparent'
     );
 

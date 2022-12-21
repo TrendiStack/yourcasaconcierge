@@ -1,42 +1,43 @@
 import { useContext } from 'react';
 import { motion as m } from 'framer-motion';
-import content from '../content';
-import Service from './services/Service';
-import { AnimationContext } from '../context/AnimationContext';
+import content from '../../content';
+import Service from '../services/Service';
+import { AnimationContext } from '../../context/AnimationContext';
 
-import { livingRoomOne } from '../assets/images/content';
+import { livingRoomOne } from '../../assets/images/content';
 
 const Services = () => {
   const { generic } = useContext(AnimationContext);
   const { services: data } = content;
 
   return (
-    <div id="services" className="bg-variant pb-36">
+    <div id="services" className="bg-dark pb-36">
       <m.div
         initial={'hidden'}
         whileInView={'visible'}
-        viewport={{ once: true, amount: 0.2 }}
+        viewport={{ once: true, amount: 0.3 }}
         transition={{ staggerChildren: 0.5 }}
         className="container layout-padding flex flex-col"
       >
-        <m.h1 variants={generic} className="garamond header-text-variant">
+        <m.h1 variants={generic} className="garamond header-text text-light">
           {data.title}
         </m.h1>
-        <div className="lg:flex items-center gap-10">
-          <m.div
-            variants={generic}
-            className="bg p-5 lg:h-[40rem] w-full mb-5 md:mb-0 min-w-[50%] shadow-lg"
-          >
-            <img
-              src={livingRoomOne}
-              alt={livingRoomOne}
-              className="h-full object-cover"
-            />
-          </m.div>
+
+        <div className="">
           <m.ul
             variants={generic}
-            className="grid lg:grid-cols-2 gap-5 2xl:gap-10"
+            className="grid grid-cols-1 md:grid-cols-3 gap-10"
           >
+            <m.div
+              variants={generic}
+              className="md:col-span-2 md:row-span-2 bg-light h-full w-full p-5 mb-5 md:mb-0 shadow-lg"
+            >
+              <img
+                src={livingRoomOne}
+                alt={livingRoomOne}
+                className="h-full w-full object-cover"
+              />
+            </m.div>
             {data.services.map(service => (
               <Service
                 key={service.id}

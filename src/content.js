@@ -32,11 +32,10 @@ const content = {
     },
   ],
   about: {
-    titleOne: 'About',
-    paragraphOne: `Our company is a full-service property management company that specializes in vacation rentals in the Greater Toronto Area. We have a team of expert property managers who are dedicated to providing exceptional service to both property owners and guests. `,
-    titleTwo: 'Our Mission',
-    paragraphTwo:
-      "We are committed to helping property owners maximize their rental income and take the hassle out of managing a vacation rental property. Whether you're a property owner looking for help managing your vacation rental, or a guest looking for a comfortable and convenient place to stay in Toronto, our team is here to help.",
+    titleOne: 'About Us',
+    paragraphOne: `We offer smart solutions and services for the modern vacation homeowner. Our objective is to make our homeowners' lives easier and our guests stay as seamless as possible. By automating all of our communications, tasks and integrating our calendars we transform the guest experience at every step of the process. `,
+    paragraphTwo: `Our advanced home systems provide easy check-in and check-out for our guests and give our homeowners increased visibility on their property. Our tech tools allow us to share our listings across various major channels such as Airbnb, Booking.com, and VRBO among others. Meanwhile our smart pricing tools ensure that your prices remain competitive and we never miss an opportunity for higher profits.`,
+    paragraphThree: `Our team will guide you through the on-boarding process and guarantee full transparency of our operations. While our professional cleaners, and customer service staff will be there to provide end-to-end support for all guest needs. Through this process we automate and elevate all areas of both the host and guest experience.`,
   },
 
   services: {
@@ -46,39 +45,50 @@ const content = {
     services: [
       {
         id: 1,
-        title: 'Cleaning services',
+        title: 'Property Optimization',
         description:
-          'At our business, we provide top-notch cleaning services to keep your home or office sparkling clean.',
+          'Initial full property walk through, includes an expense assessment, and decor consultation upon request.',
       },
       {
         id: 2,
-        title: 'Price Optimization',
-        description:
-          'Our business offers expert price optimization to help you maximize your profits and stay competitive in the marketplace.',
+        title: 'Listing set up and advertising',
+        description: ' Professional photos,  listing creation and promotion. ',
       },
       {
         id: 3,
-        title: 'Client Communication',
+        title: 'Daily pricing optimization',
         description:
-          'Maintain strong, productive relationships with your clients and customers with our exceptional client communication services.',
+          'Pricing algorithms capture the most accurate rates for your property to ensure maximum booking value',
       },
       {
         id: 4,
-        title: 'Guest Experience',
+        title: 'Listing Management',
         description:
-          'We specialize in creating unforgettable guest experiences to ensure that your guests have a memorable and enjoyable stay.',
+          'From dynamic pricing to booking inquiries,  guest communications , and payouts.',
       },
       {
         id: 5,
-        title: '24/7 Support',
-        description:
-          'Need help with a problem at any time of day or night? Our 24/7 support services are here for you.',
+        title: 'Maintenance & Housekeeping',
+        description: 'Professional housekeeping, inventory and quality checks.',
       },
       {
         id: 6,
-        title: 'Re-stocking',
+        title: 'Smart home systems',
         description:
-          'Ensure that your shelves are always stocked and your customers are always happy with our expert re-stocking services.',
+          'Noise monitoring systems, as well as smart locks allow for safe and secure access for guests, as well as increased visibility on your property at all times. ',
+      },
+      {
+        id: 7,
+        title: '24/7 Guest Support',
+        description:
+          'Our team is available for any check-in & departure questions and support 24/7 so you have peace of mind at all times',
+      },
+
+      {
+        id: 8,
+        title: 'Reporting and Analytics',
+        description:
+          'Monthly expense breakdowns, guest logs and revenue reports.',
       },
     ],
   },
@@ -89,16 +99,16 @@ const content = {
     plans: [
       {
         id: 1,
-        title: 'Essentials',
+        title: 'Basic',
         image: pricingPlanTwo,
-        description: `This plan would include the basic services required for managing a property, such as bookings management, cleaning, and 24/7 support for guests`,
+        description: `10% ( includes all services, except for Professional House Keeping)`,
       },
 
       {
         id: 2,
         title: 'Premium',
         image: pricingPlanThree,
-        description: `This plan would offer the most comprehensive support and assistance, including additional marketing and advertising support, as well as personalized consultations with property managers to help maximize rental income`,
+        description: `20% (Includes all services)`,
       },
     ],
   },
@@ -107,9 +117,6 @@ const content = {
     title: 'Contact',
     subtitle:
       'Please leave us with your contact information and someone from our team will reach out to you!',
-    description: `We are truly passionate about making propery rental and management
-              as easy as possible if you are too, fill out the form on screen to
-              get in contact with us`,
   },
 
   footer: {

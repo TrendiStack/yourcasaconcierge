@@ -1,0 +1,66 @@
+import content from '../../content';
+import Form from '../contact/Form';
+import { motion as m } from 'framer-motion';
+import { useContext } from 'react';
+import { AnimationContext } from '../../context/AnimationContext';
+
+const Contact = () => {
+  const { contact } = content;
+  const { footer } = content;
+  const { pricing } = useContext(AnimationContext);
+  return (
+    <m.div
+      initial={'hidden'}
+      whileInView={'visible'}
+      viewport={{ once: true, amount: 0.5 }}
+      transition={{ staggerChildren: 0.1 }}
+      id="contact"
+      className="pt-10 pb-20 bg-light"
+    >
+      <div className="container layout-padding">
+        <m.h2
+          variants={pricing}
+          className="sm:hidden garamond text-center text-xl"
+        >
+          {contact.subtitle}
+        </m.h2>
+        <m.h1
+          variants={pricing}
+          className="text-center sm:text-left header-text-mobile text-primary"
+        >
+          {contact.title}
+        </m.h1>
+        <div className="xl:grid grid-cols-2 gap-10 garamond">
+          <div className="text-left">
+            <m.h2
+              variants={pricing}
+              className="hidden text-2xl sm:block my-5 w-5/6"
+            >
+              {contact.subtitle}
+            </m.h2>
+            <m.div variants={pricing} className="hidden sm:flex flex-col">
+              <span>
+                <a className="text-3xl" href={`mailto:${footer.email}`}>
+                  {footer.email}
+                </a>
+              </span>
+            </m.div>
+          </div>
+          <m.div
+            variants={pricing}
+            className="xl:hidden flex flex-col pb-10 text-center"
+          >
+            <span>
+              <a className="text-xl" href="mailto:hello@yourcasaconcierge.com">
+                {footer.email}
+              </a>
+            </span>
+          </m.div>
+          <Form />
+        </div>
+      </div>
+    </m.div>
+  );
+};
+
+export default Contact;

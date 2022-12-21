@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import emailjs from '@emailjs/browser';
 import { motion as m } from 'framer-motion';
 import { AnimationContext } from '../../context/AnimationContext';
+import FormInput from './FormInput';
 
 const Form = () => {
   const { pricing } = useContext(AnimationContext);
@@ -69,76 +70,54 @@ const Form = () => {
       className="relative"
     >
       <div className="grid gap-y-5 md:gap-y-10 ">
-        <input
-          className={`bg-transparent placeholder:bg-transparent border-b rounded-none border-black
-                border-opacity-50 focus:outline-none focus:border-[#527488] focus:placeholder-[#527488]
-                ${
-                  formik.touched.firstName && formik.errors.firstName
-                    ? 'border-red-500 bg-transparent placeholder:text-red-500'
-                    : 'placeholder:text-[#527488]'
-                }`}
-          type="text"
+        <FormInput
           name="firstName"
           placeholder="First Name"
+          type="text"
           value={firstName}
           onChange={formik.handleChange}
           onBlur={formik.handleBlur}
+          touched={formik.touched.firstName}
+          errors={formik.errors.firstName}
         />
-
-        <input
-          className={`bg-transparent placeholder:bg-transparent border-b rounded-none border-black
-                border-opacity-50 focus:outline-none focus:border-[#527488] focus:placeholder-[#527488]
-                 ${
-                   formik.touched.lastName && formik.errors.lastName
-                     ? 'border-red-500 bg-transparent placeholder:text-red-500'
-                     : 'placeholder:text-[#527488]'
-                 }`}
-          type="text"
+        <FormInput
           name="lastName"
           placeholder="Last Name"
+          type="text"
           value={lastName}
           onChange={formik.handleChange}
           onBlur={formik.handleBlur}
+          touched={formik.touched.lastName}
+          errors={formik.errors.lastName}
         />
 
-        <input
-          className={`bg-transparent placeholder:bg-transparent border-b rounded-none border-black
-                border-opacity-50 focus:outline-none focus:border-[#527488] focus:placeholder-[#527488]
-                  ${
-                    formik.touched.email && formik.errors.email
-                      ? 'border-red-500 placeholder:text-red-500'
-                      : 'placeholder:text-[#527488]'
-                  }
-                `}
-          type="text"
+        <FormInput
           name="email"
           placeholder="Email"
+          type="email"
           value={email}
           onChange={formik.handleChange}
           onBlur={formik.handleBlur}
+          touched={formik.touched.email}
+          errors={formik.errors.email}
         />
 
-        <input
-          className={`bg-transparent placeholder:bg-transparent border-b rounded-none border-black
-                border-opacity-50 focus:outline-none focus:border-[#527488] focus:placeholder-[#527488]
-                ${
-                  formik.touched.inquiry && formik.errors.inquiry
-                    ? 'border-red-500 bg-transparent placeholder:text-red-500'
-                    : 'placeholder:text-[#527488]'
-                }`}
-          type="text"
+        <FormInput
           name="inquiry"
           placeholder="Inquiry"
+          type="text"
           value={inquiry}
           onChange={formik.handleChange}
           onBlur={formik.handleBlur}
+          touched={formik.touched.inquiry}
+          errors={formik.errors.inquiry}
         />
       </div>
       <button
         type="submit"
-        className="text-[#D6DFDE] md:static absolute right-0 -bottom-24 flex items-center justify-center gap-2 md:float-right p-2 mt-8 bg-variant"
+        className="bg-variant text-light md:static absolute right-0 -bottom-24 flex items-center justify-center gap-2 md:float-right p-2 mt-8"
       >
-        Send Message <div className="h-[3px] w-11 bg"></div>
+        Send Message <div className="h-[3px] w-11 bg-light"></div>
       </button>
     </m.form>
   );

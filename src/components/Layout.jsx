@@ -1,12 +1,5 @@
 import React from 'react';
-import {
-  About,
-  Services,
-  Pricing,
-  Brands,
-  Contact,
-  Footer,
-} from '../components';
+import { About, Services, Pricing, Brands, Contact, Footer } from './Sections';
 const Layout = () => {
   return (
     <div className="overflow-hidden">

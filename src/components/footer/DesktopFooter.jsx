@@ -27,7 +27,7 @@ const DesktopFooter = () => {
         alt="sauna"
         className="h-[15rem] lg:h-[25rem] w-full object-cover"
       />
-      <div className="container layout-padding hidden xl:block py-5 text-[#D6DFDE]">
+      <div className="container layout-padding hidden xl:block py-5 text-light">
         <m.div
           initial={'hidden'}
           whileInView={'visible'}
@@ -37,17 +37,12 @@ const DesktopFooter = () => {
         >
           <m.div variants={generic} className="garamond">
             <div className="text-xl leading-5">
-              <p>{footer.address}</p>
-              <p>
-                {footer.phone.split('-')[0]} - {footer.phone.split('-')[1]} -{' '}
-                {footer.phone.split('-')[2]} - {footer.phone.split('-')[3]}
-              </p>
               <p>
                 {footer.email.split('@')[0]} @ {footer.email.split('@')[1]}
               </p>
             </div>
             <div className="flex items-center gap-2 text-xl">
-              <div className="w-[27px] h-[3.03px] bg-variant"></div>
+              <div className="w-[27px] h-[3.03px] bg-light"></div>
               <p>Follow us</p>
             </div>
             <m.div variants={generic} className="flex text-lg gap-2">

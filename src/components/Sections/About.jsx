@@ -1,8 +1,8 @@
-import DesktopAbout from './about/DesktopAbout';
+import DesktopAbout from '../about/DesktopAbout';
 
 const About = () => {
   return (
-    <div id="about" className="bg">
+    <div id="about" className="bg-light">
       <DesktopAbout />
     </div>
   );

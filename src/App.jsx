@@ -1,7 +1,7 @@
-import { Route, Routes } from "react-router-dom";
-import { Nav, Hero, Layout } from "./components";
-import FormSent from "./components/contact/FormSent";
-import PageNotFound from "./components/PageNotFound";
+import { Route, Routes } from 'react-router-dom';
+import { Nav, Hero, Layout } from './components/Sections';
+import FormSent from './components/contact/FormSent';
+import PageNotFound from './components/PageNotFound';
 
 function App() {
   return (

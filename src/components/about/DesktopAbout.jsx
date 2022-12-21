@@ -3,11 +3,11 @@ import content from '../../content';
 import { livingRoomTwo } from '../../assets/images/content';
 import { useContext } from 'react';
 import { AnimationContext } from '../../context/AnimationContext';
+import AboutArticle from './AboutArticle';
 
 const DesktopAbout = () => {
   const { about } = content;
   const { generic } = useContext(AnimationContext);
-
   return (
     <m.div
       initial={'hidden'}
@@ -18,7 +18,7 @@ const DesktopAbout = () => {
     >
       <m.h1
         variants={generic}
-        className="about-header-text garamond lg:relative top-12  px-10 text-center tracking-tight z-30"
+        className="about-header-text text-primary garamond lg:relative top-12  px-10 text-center tracking-tight z-30"
       >
         Let's get to know <br /> each other
       </m.h1>
@@ -28,24 +28,23 @@ const DesktopAbout = () => {
         alt=""
         className="w-full max-h-[600px] object-cover "
       />
-      <div className="mt-20 grid xl:grid-cols-2 gap-5 xl:gap-32 container layout-padding">
-        <m.div variants={generic}>
-          <h2 className="garamond font-semibold text-4xl xl:text-[64px] text-color-variant">
-            {about.titleOne}
-          </h2>
-          <p className="pt-10 font-normal md:text-2xl text-justify">
-            {about.paragraphOne}
-          </p>
-        </m.div>
-        <m.div variants={generic}>
-          <h2 className="garamond font-semibold text-4xl xl:text-[64px] text-color-variant">
-            {about.titleTwo}
-          </h2>
-          <p className="pt-10 font-normal md:text-2xl text-justify">
-            {about.paragraphTwo}
-          </p>
-        </m.div>
-      </div>
+
+      <m.div
+        variants={generic}
+        className="text-light container layout-padding md:border-t-2 border-black md:mt-24"
+      >
+        <div className="grid grid-cols-1 xl:grid-cols-3 gap-10 text-primary text-base xl:text-lg pt-10">
+          <AboutArticle title="Smart Solutions" text={about.paragraphOne} />
+          <AboutArticle
+            title="Home System & Smart Tools"
+            text={about.paragraphTwo}
+          />
+          <AboutArticle
+            title="Transparency & Support"
+            text={about.paragraphThree}
+          />
+        </div>
+      </m.div>
     </m.div>
   );
 };

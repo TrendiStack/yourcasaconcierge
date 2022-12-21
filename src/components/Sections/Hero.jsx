@@ -1,13 +1,13 @@
-import headerImg from '../assets/images/header-img-5.jpg';
-import MailChimpForm from './contact/MailChimpForm';
+import { livingRoomTwo } from '../../assets/images/content/';
+import MailChimpForm from '../contact/MailChimpForm';
 import { motion as m } from 'framer-motion';
 import { useContext } from 'react';
-import { AnimationContext } from '../context/AnimationContext';
+import { AnimationContext } from '../../context/AnimationContext';
 
 const Hero = () => {
   const { generic } = useContext(AnimationContext);
   const styles = {
-    backgroundImage: `url(${headerImg})`,
+    backgroundImage: `url(${livingRoomTwo})`,
     backgroundRepeat: 'no-repeat',
     backgroundSize: 'cover',
     backgroundPosition: 'center',
