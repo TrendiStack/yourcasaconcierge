@@ -1,4 +1,4 @@
-import { livingRoomTwo } from '../../assets/images/content/';
+import { kitchen } from '../../assets/images/content/';
 import MailChimpForm from '../contact/MailChimpForm';
 import { motion as m } from 'framer-motion';
 import { useContext } from 'react';
@@ -18,9 +18,9 @@ const Hero = () => {
     >
       <img
         className="absolute inset-0 w-full h-full object-cover"
-        src={livingRoomTwo}
+        src={kitchen}
         loading="lazy"
-        alt={livingRoomTwo}
+        alt={kitchen}
       />
       <div className="absolute inset-0 bg-gradient-to-r from-[#000] opacity-90 z-20" />
       <m.div
