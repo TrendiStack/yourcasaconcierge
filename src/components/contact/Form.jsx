@@ -8,7 +8,7 @@ import { AnimationContext } from '../../context/AnimationContext';
 import FormInput from './FormInput';
 
 const Form = () => {
-  const { pricing } = useContext(AnimationContext);
+  const { generic } = useContext(AnimationContext);
   const formRef = useRef();
   const navigate = useNavigate();
   const sendEmail = () => {
@@ -64,7 +64,7 @@ const Form = () => {
   const { firstName, lastName, email, inquiry } = formik.values;
   return (
     <m.form
-      variants={pricing}
+      variants={generic}
       ref={formRef}
       onSubmit={formik.handleSubmit}
       className="relative"

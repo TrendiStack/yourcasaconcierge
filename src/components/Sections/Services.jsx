@@ -23,12 +23,12 @@ const Services = () => {
           {data.title}
         </m.h1>
 
-        <div className="">
+        <div>
           <m.ul
             variants={generic}
             className="grid grid-cols-1 md:grid-cols-3 gap-10"
           >
-            <m.div
+            <m.li
               variants={generic}
               className="md:col-span-2 md:row-span-2 bg-light h-full w-full p-5 mb-5 md:mb-0 shadow-lg"
             >
@@ -37,7 +37,7 @@ const Services = () => {
                 alt={livingRoomOne}
                 className="h-full w-full object-cover"
               />
-            </m.div>
+            </m.li>
             {data.services.map(service => (
               <Service
                 key={service.id}

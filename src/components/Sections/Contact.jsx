@@ -7,7 +7,7 @@ import { AnimationContext } from '../../context/AnimationContext';
 const Contact = () => {
   const { contact } = content;
   const { footer } = content;
-  const { pricing } = useContext(AnimationContext);
+  const { generic } = useContext(AnimationContext);
   return (
     <m.div
       initial={'hidden'}
@@ -19,13 +19,13 @@ const Contact = () => {
     >
       <div className="container layout-padding">
         <m.h2
-          variants={pricing}
+          variants={generic}
           className="sm:hidden garamond text-center text-xl"
         >
           {contact.subtitle}
         </m.h2>
         <m.h1
-          variants={pricing}
+          variants={generic}
           className="text-center sm:text-left header-text-mobile text-primary"
         >
           {contact.title}
@@ -33,12 +33,12 @@ const Contact = () => {
         <div className="xl:grid grid-cols-2 gap-10 garamond">
           <div className="text-left">
             <m.h2
-              variants={pricing}
+              variants={generic}
               className="hidden text-2xl sm:block my-5 w-5/6"
             >
               {contact.subtitle}
             </m.h2>
-            <m.div variants={pricing} className="hidden sm:flex flex-col mb-10">
+            <m.div variants={generic} className="hidden sm:flex flex-col mb-10">
               <span>
                 <a className="text-3xl" href={`mailto:${footer.email}`}>
                   {footer.email}
@@ -47,7 +47,7 @@ const Contact = () => {
             </m.div>
           </div>
           <m.div
-            variants={pricing}
+            variants={generic}
             className="sm:hidden flex flex-col pb-10 text-center"
           >
             <span>

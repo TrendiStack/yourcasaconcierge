@@ -18,8 +18,8 @@ const MobileFooter = () => {
         src={ycclogo}
         alt="Your Casa Concierge Logo"
       />
-      <ul className="flex justify-between my-4">
-        <div className="flex flex-col gap-2">
+      <div className="flex justify-between my-4">
+        <ul className="flex flex-col gap-2">
           {nav
             .filter(item => item.id < 4)
             .map(item => (
@@ -27,8 +27,8 @@ const MobileFooter = () => {
                 <a href={item.path}>{item.title}</a>
               </li>
             ))}
-        </div>
-        <div className="flex flex-col gap-2">
+        </ul>
+        <ul className="flex flex-col gap-2">
           {nav
             .filter(item => item.id > 3 && item.id < 7)
             .map(item => (
@@ -36,8 +36,8 @@ const MobileFooter = () => {
                 <a href={item.path}>{item.title}</a>
               </li>
             ))}
-        </div>
-      </ul>
+        </ul>
+      </div>
 
       <div className="mb-4">
         <p className="font-semibold">Contact:</p>

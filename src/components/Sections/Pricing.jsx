@@ -7,17 +7,18 @@ import { AnimationContext } from '../../context/AnimationContext';
 const Pricing = () => {
   const { pricing, services } = content;
   const { plans } = pricing;
-  const { pricing: variant } = useContext(AnimationContext);
+  const { generic } = useContext(AnimationContext);
   return (
-    <div id="pricing" className="bg-light pb-20">
-      <div className="container layout-padding">
-        <m.h1
-          variants={variant}
-          initial={'hidden'}
-          whileInView={'visible'}
-          viewport={{ once: true, amount: 0.5 }}
-          className="header-text text-primary"
-        >
+    <m.div
+      initial={'hidden'}
+      whileInView={'visible'}
+      viewport={{ once: true }}
+      transition={{ staggerChildren: 0.5 }}
+      id="pricing"
+      className="bg-light pb-20"
+    >
+      <m.div className="container layout-padding">
+        <m.h1 variants={generic} className="header-text text-primary">
           {pricing.title}
         </m.h1>
         <div className="flex flex-col gap-14">
@@ -33,8 +34,8 @@ const Pricing = () => {
             />
           ))}
         </div>
-      </div>
-    </div>
+      </m.div>
+    </m.div>
   );
 };
 

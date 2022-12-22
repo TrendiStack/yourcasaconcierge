@@ -1,12 +1,8 @@
-import { createContext, useState } from 'react';
+import { createContext } from 'react';
 
-export const AnimationContext = createContext({
-  reversed: false,
-  setReversed: () => {},
-});
+export const AnimationContext = createContext({});
 
 export const AnimationProvider = ({ children }) => {
-  const [reversed, setReversed] = useState(false);
   const generic = {
     hidden: {
       opacity: 0,
@@ -33,27 +29,9 @@ export const AnimationProvider = ({ children }) => {
     },
   };
 
-  const pricing = {
-    hidden: {
-      opacity: 0,
-      x: reversed ? 100 : -100,
-    },
-    visible: {
-      opacity: 1,
-      x: 0,
-
-      transition: {
-        duration: 1.5,
-      },
-    },
-  };
-
   const value = {
     generic,
     absoluteText,
-    pricing,
-    reversed,
-    setReversed,
   };
 
   return (
