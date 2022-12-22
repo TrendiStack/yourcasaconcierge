@@ -34,16 +34,15 @@ const Menu = () => {
               </li>
             );
           })}
-          <div>
-            <p className="text-2xl">1 800 123 4567</p>
+          <li>
             <p className="text-xl ">hello@yourcasaconcierge.com</p>
-          </div>
-          <div className="flex gap-5">
+          </li>
+          <li className="flex gap-5">
             <FaFacebookF className="text-xl" />
             <FaTwitter className="text-xl" />
             <FaInstagram className="text-xl" />
             <FaLinkedin className="text-xl" />
-          </div>
+          </li>
         </ul>
       </m.div>
 
