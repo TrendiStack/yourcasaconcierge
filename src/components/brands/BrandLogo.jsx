@@ -26,7 +26,7 @@ const BrandLogo = ({ logo, borderRight, borderBottom }) => {
             : vrbo
         }
         loading="lazy"
-        alt={logo}
+        alt="Partner Logo"
         className="w-24 md:w-36 xl:w-auto"
       />
     </div>

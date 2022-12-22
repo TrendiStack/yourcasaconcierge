@@ -20,7 +20,7 @@ const Hero = () => {
         className="absolute inset-0 w-full h-full object-cover"
         src={kitchen}
         loading="lazy"
-        alt={kitchen}
+        alt="Hero image"
       />
       <div className="absolute inset-0 bg-gradient-to-r from-[#000] opacity-90 z-20" />
       <m.div

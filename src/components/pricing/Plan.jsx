@@ -22,7 +22,7 @@ const Plan = ({ id, reversed, image, title, desc, services }) => {
           className="w-full h-full object-cover"
           src={image}
           loading="lazy"
-          alt={image}
+          alt="Plan Image"
         />
       </m.div>
 
