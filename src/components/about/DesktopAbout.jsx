@@ -33,7 +33,7 @@ const DesktopAbout = () => {
         variants={generic}
         className="text-light container layout-padding md:border-t-2 border-black md:mt-24"
       >
-        <div className="grid grid-cols-1 xl:grid-cols-3 gap-10 text-primary text-base xl:text-lg pt-10">
+        <div className="grid grid-cols-1 2xl:grid-cols-3 gap-10 text-primary text-base xl:text-lg pt-10">
           <AboutArticle title="Smart Solutions" text={about.paragraphOne} />
           <AboutArticle
             title="Home System & Smart Tools"

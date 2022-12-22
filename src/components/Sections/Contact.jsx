@@ -38,7 +38,7 @@ const Contact = () => {
             >
               {contact.subtitle}
             </m.h2>
-            <m.div variants={pricing} className="hidden sm:flex flex-col">
+            <m.div variants={pricing} className="hidden sm:flex flex-col mb-10">
               <span>
                 <a className="text-3xl" href={`mailto:${footer.email}`}>
                   {footer.email}
@@ -48,7 +48,7 @@ const Contact = () => {
           </div>
           <m.div
             variants={pricing}
-            className="xl:hidden flex flex-col pb-10 text-center"
+            className="sm:hidden flex flex-col pb-10 text-center"
           >
             <span>
               <a className="text-xl" href="mailto:hello@yourcasaconcierge.com">
