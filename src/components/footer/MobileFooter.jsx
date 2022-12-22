@@ -16,6 +16,7 @@ const MobileFooter = () => {
       <img
         className="w-[200px] logo"
         src={ycclogo}
+        loading="lazy"
         alt="Your Casa Concierge Logo"
       />
       <div className="flex justify-between my-4">

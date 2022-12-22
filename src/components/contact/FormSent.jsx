@@ -1,5 +1,5 @@
-import { motion as m } from "framer-motion";
-import waves from "../../assets/backgrounds/wave_background.svg";
+import { motion as m } from 'framer-motion';
+import waves from '../../assets/backgrounds/wave_background.svg';
 
 const FormSent = () => {
   return (
@@ -12,6 +12,7 @@ const FormSent = () => {
     >
       <img
         src={waves}
+        loading="lazy"
         alt="waves"
         className="absolute top-0 left-0 w-full h-full object-cover z-[-1]"
       />

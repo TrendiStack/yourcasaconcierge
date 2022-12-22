@@ -25,7 +25,8 @@ const DesktopAbout = () => {
       <m.img
         variants={generic}
         src={livingRoomTwo}
-        alt=""
+        loading="lazy"
+        alt="living room image"
         className="w-full max-h-[600px] object-cover "
       />
 

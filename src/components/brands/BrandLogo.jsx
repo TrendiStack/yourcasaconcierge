@@ -25,6 +25,7 @@ const BrandLogo = ({ logo, borderRight, borderBottom }) => {
             ? homeaway
             : vrbo
         }
+        loading="lazy"
         alt={logo}
         className="w-24 md:w-36 xl:w-auto"
       />

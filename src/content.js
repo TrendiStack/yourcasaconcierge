@@ -120,8 +120,6 @@ const content = {
   },
 
   footer: {
-    address: 'Level 1, 12 Sample St, Sydney NSW 2000',
-    phone: ' 1-800-123-4567',
     email: 'hello@yourcasaconcierge.com',
     copyRight: `© ${
       new Date().getFullYear() - 1

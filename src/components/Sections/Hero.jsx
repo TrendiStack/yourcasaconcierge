@@ -6,12 +6,7 @@ import { AnimationContext } from '../../context/AnimationContext';
 
 const Hero = () => {
   const { generic } = useContext(AnimationContext);
-  const styles = {
-    backgroundImage: `url(${livingRoomTwo})`,
-    backgroundRepeat: 'no-repeat',
-    backgroundSize: 'cover',
-    backgroundPosition: 'center',
-  };
+
   return (
     <m.header
       id="home"
@@ -20,8 +15,13 @@ const Hero = () => {
       viewport={{ once: true, amount: 0.5 }}
       transition={{ staggerChildren: 0.5 }}
       className="relative lg:bg-fixed w-full flex flex-col justify-center h-[100.5vh] text-white"
-      style={styles}
     >
+      <img
+        className="absolute inset-0 w-full h-full object-cover"
+        src={livingRoomTwo}
+        loading="lazy"
+        alt={livingRoomTwo}
+      />
       <div className="absolute inset-0 bg-gradient-to-r from-[#000] opacity-90 z-20" />
       <m.div
         variants={generic}

@@ -6,13 +6,6 @@ import { IoCloseSharp } from 'react-icons/io5';
 
 const Plan = ({ id, reversed, image, title, desc, services }) => {
   const { generic } = useContext(AnimationContext);
-
-  const styles = {
-    backgroundImage: `url(${image})`,
-    backgroundRepeat: 'no-repeat',
-    backgroundSize: 'cover',
-    backgroundPosition: 'center',
-  };
   return (
     <m.div
       variants={generic}
@@ -24,8 +17,15 @@ const Plan = ({ id, reversed, image, title, desc, services }) => {
         className={`w-full h-[300px] md:h-full object-cover shadow-lg ${
           reversed ? 'md:ml-10' : 'md:mr-10'
         }`}
-        style={styles}
-      />
+      >
+        <img
+          className="w-full h-full object-cover"
+          src={image}
+          loading="lazy"
+          alt={image}
+        />
+      </m.div>
+
       <div className="flex flex-col gap-5 w-full md:w-[80%] lg:w-[60%] xl:w-[80%] transition-all duration-500 ">
         <m.p className="text-4xl 2xl:text-[64px] text-primary font-semibold">
           {title}

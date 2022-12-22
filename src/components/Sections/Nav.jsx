@@ -56,11 +56,13 @@ const Nav = () => {
             <img
               className="hidden xl:block w-[250px]"
               src={logo}
+              loading="lazy"
               alt="large logo"
             />
             <img
               className="xl:hidden w-[80px]"
               src={smallLogo}
+              loading="lazy"
               alt="small logo"
             />
           </Link>

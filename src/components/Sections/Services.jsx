@@ -34,6 +34,7 @@ const Services = () => {
             >
               <img
                 src={livingRoomOne}
+                loading="lazy"
                 alt={livingRoomOne}
                 className="h-full w-full object-cover"
               />

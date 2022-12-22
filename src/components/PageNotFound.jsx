@@ -1,13 +1,14 @@
-import { motion as m } from "framer-motion";
-import waves from "../assets/backgrounds/wave_background.svg";
-import arrow from "../assets/images/arrow.png";
-import logoDark from "../assets/images/ycclogoblack.svg";
+import { motion as m } from 'framer-motion';
+import waves from '../assets/backgrounds/wave_background.svg';
+import arrow from '../assets/images/arrow.png';
+import logoDark from '../assets/images/ycclogoblack.svg';
 
 const PageNotFound = () => {
   return (
     <div className="flex flex-col items-center">
       <img
         src={waves}
+        loading="lazy"
         alt="waves background"
         className="absolute top-0 left-0 w-full h-full object-cover z-[-1]"
       />
@@ -16,6 +17,7 @@ const PageNotFound = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
         src={logoDark}
+        loading="lazy"
         alt="dark logo"
         className="w-[15rem] lg:w-[20rem] object-contain mt-14 xl:mt-5"
       />
@@ -47,6 +49,7 @@ const PageNotFound = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.5 }}
             src={arrow}
+            loading="lazy"
             alt="arrow"
             className="w-[5rem] xl:w-[13rem] relative top-2 xl:top-5"
           />
