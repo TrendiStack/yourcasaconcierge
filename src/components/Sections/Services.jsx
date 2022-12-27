@@ -1,14 +1,14 @@
 import { useContext } from 'react';
-import { motion as m } from 'framer-motion';
-import content from '../../content';
-import Service from '../services/Service';
 import { AnimationContext } from '../../context/AnimationContext';
-
-import { livingRoomOne } from '../../assets/images/content';
+import { SanityContext } from '../../context/SanityContext';
+import { urlFor } from '../../lib/client';
+import { motion as m } from 'framer-motion';
+import Service from '../services/Service';
 
 const Services = () => {
+  const { services } = useContext(SanityContext);
   const { generic } = useContext(AnimationContext);
-  const { services: data } = content;
+  const data = services[0];
 
   return (
     <div id="services" className="bg-dark pb-36">
@@ -20,7 +20,7 @@ const Services = () => {
         className="container layout-padding flex flex-col"
       >
         <m.h1 variants={generic} className="garamond header-text text-light">
-          {data.title}
+          {data?.title}
         </m.h1>
 
         <div>
@@ -32,14 +32,16 @@ const Services = () => {
               variants={generic}
               className="md:col-span-2 md:row-span-2 bg-light h-full w-full p-5 mb-5 md:mb-0 shadow-lg"
             >
-              <img
-                src={livingRoomOne}
-                loading="lazy"
-                alt="Services Image"
-                className="h-full w-full object-cover"
-              />
+              {data?.image && (
+                <img
+                  src={urlFor(data.image).url()}
+                  loading="lazy"
+                  alt="Services Image"
+                  className="h-full w-full object-cover"
+                />
+              )}
             </m.li>
-            {data.services.map(service => (
+            {data?.services.map(service => (
               <Service
                 key={service.id}
                 num={service.id}
@@ -52,6 +54,16 @@ const Services = () => {
       </m.div>
     </div>
   );
+};
+
+export const getServerSideProps = async () => {
+  const query = `*[_type == "services"]`;
+  const servicess = await client.fetch(query);
+  return {
+    props: {
+      servicess,
+    },
+  };
 };
 
 export default Services;

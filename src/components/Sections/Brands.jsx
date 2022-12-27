@@ -18,11 +18,7 @@ const Brands = () => {
         variants={generic}
         className="container layout-padding grid grid-cols-2"
       >
-        <div className="flex items-center justify-center h-40 xl:h-52 w-full border-b border-r border-black">
-          <p className="garamond text-xl xl:text-4xl text-center mr-2 text-light">
-            The partners we trust
-          </p>
-        </div>
+        <BrandLogo logo="tripadvisor" borderRight borderBottom />
         <BrandLogo logo="airbnb" borderBottom />
         <BrandLogo logo="homeaway" borderRight borderBottom />
         <BrandLogo logo="vrbo" borderBottom />

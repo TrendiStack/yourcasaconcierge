@@ -1,28 +1,32 @@
-import content from '../../content';
-import ycclogo from '../../assets/images/ycclogo.svg';
+import { useContext } from 'react';
+import { SanityContext } from '../../context/SanityContext';
+import MailChimpForm from '../contact/MailChimpForm';
+import { urlFor } from '../../lib/client';
 import {
   FaFacebookF,
   FaTwitter,
   FaInstagram,
   FaLinkedin,
 } from 'react-icons/fa';
-import MailChimpForm from '../contact/MailChimpForm';
 
 const MobileFooter = () => {
-  const { footer } = content;
-  const { nav } = content;
+  const { navigation: nav, footer: foot } = useContext(SanityContext);
+  const footer = foot[0];
   return (
     <div className="container xl:hidden layout-padding py-10 text-light">
-      <img
-        className="w-[200px] logo"
-        src={ycclogo}
-        loading="lazy"
-        alt="Your Casa Concierge Logo"
-      />
+      {footer?.logo && (
+        <img
+          className="w-[200px] logo"
+          src={urlFor(footer.logo).url()}
+          loading="lazy"
+          alt="Your Casa Concierge Logo"
+        />
+      )}
+
       <div className="flex justify-between my-4">
         <ul className="flex flex-col gap-2">
           {nav
-            .filter(item => item.id < 4)
+            ?.filter(item => item.id < 4)
             .map(item => (
               <li key={item.id}>
                 <a href={item.path}>{item.title}</a>
@@ -31,7 +35,7 @@ const MobileFooter = () => {
         </ul>
         <ul className="flex flex-col gap-2">
           {nav
-            .filter(item => item.id > 3 && item.id < 7)
+            ?.filter(item => item.id > 3 && item.id < 7)
             .map(item => (
               <li key={item.id}>
                 <a href={item.path}>{item.title}</a>
@@ -42,11 +46,11 @@ const MobileFooter = () => {
 
       <div className="mb-4">
         <p className="font-semibold">Contact:</p>
-        <p>{footer.email}</p>
+        <p>{footer?.email}</p>
       </div>
       <div className="flex justify-between my-2">
-        <div className="flex items-center gap-2 ml-2">
-          <div className="w-[27px] h-[3.03px] bg"></div>
+        <div className="flex items-center gap-2">
+          <div className="w-[27px] h-[3.03px] bg-light"></div>
           <p>Follow us</p>
         </div>
         <div className="flex gap-2">
@@ -57,7 +61,9 @@ const MobileFooter = () => {
         </div>
       </div>
       <MailChimpForm footer mobile />
-      <p className="text-center pt-8">{footer.copyRight}</p>
+      <p className="text-center pt-8">{`© ${
+        new Date().getFullYear() - 1
+      } YourCasaConcierge. All rights reserved.`}</p>
     </div>
   );
 };

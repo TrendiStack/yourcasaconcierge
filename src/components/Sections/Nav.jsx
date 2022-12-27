@@ -1,23 +1,27 @@
 import { useContext, useState, useEffect } from 'react';
-import { motion as m } from 'framer-motion';
 import { MenuContext } from '../../context/MenuContext';
 import { RefContext } from '../../context/RefContext';
+import { AnimationContext } from '../../context/AnimationContext';
+import { SanityContext } from '../../context/SanityContext';
+
+import { motion as m } from 'framer-motion';
+
 import { HashLink as Link } from 'react-router-hash-link';
 import { Outlet } from 'react-router-dom';
+
 import LinkItem from '../LinkItem';
 import Menu from '../Menu';
-import content from '../../content';
-import logo from '../../assets/images/ycclogo.svg';
-import smallLogo from '../../assets/images/smallLogo.svg';
-import { AnimationContext } from '../../context/AnimationContext';
+
+import { urlFor } from '../../lib/client';
 
 const Nav = () => {
   const { isOpen, toggleMenu } = useContext(MenuContext);
   const { footervisible } = useContext(RefContext);
   const { generic } = useContext(AnimationContext);
+  const { navigation: nav, footer: foot } = useContext(SanityContext);
+  const footer = foot[0];
   // background
   const [bg, setBg] = useState();
-  const { nav } = content;
   useEffect(() => {
     window.addEventListener('scroll', () => {
       setBg(window.scrollY > 0 ? 'bg-dark' : 'bg-transparent');
@@ -53,21 +57,25 @@ const Nav = () => {
           className="container layout-padding flex justify-between items-center"
         >
           <Link to="/#home">
-            <img
-              className="hidden xl:block w-[250px]"
-              src={logo}
-              loading="lazy"
-              alt="large logo"
-            />
-            <img
-              className="xl:hidden w-[80px]"
-              src={smallLogo}
-              loading="lazy"
-              alt="small logo"
-            />
+            {footer?.logo && (
+              <img
+                className="hidden xl:block w-[250px]"
+                src={urlFor(footer.logo).url()}
+                loading="lazy"
+                alt="large logo"
+              />
+            )}
+            {footer?.smallLogo && (
+              <img
+                className="xl:hidden w-[80px]"
+                src={urlFor(footer.smallLogo).url()}
+                loading="lazy"
+                alt="small logo"
+              />
+            )}
           </Link>
           <ul className="hidden relative xl:flex gap-3 text-white text-md font-normal text-lg ">
-            {nav.map((item, index) => {
+            {nav?.map((item, index) => {
               return (
                 <m.li variants={generic} key={item.id}>
                   <LinkItem to={item.path} text={item.title} />
@@ -79,7 +87,7 @@ const Nav = () => {
             variants={generic}
             className="flex items-center gap-4 xl:hidden text-white"
           >
-            <Link to={`/#${nav[nav.length - 1].path}`} className="xl:hidden">
+            <Link to={`/#${nav[nav.length - 1]?.path}`} className="xl:hidden">
               Contact
             </Link>
             <div onClick={toggleMenu} className="menu-btn">

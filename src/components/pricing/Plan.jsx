@@ -4,7 +4,7 @@ import { AnimationContext } from '../../context/AnimationContext';
 import { FiCheck } from 'react-icons/fi';
 import { IoCloseSharp } from 'react-icons/io5';
 
-const Plan = ({ id, reversed, image, title, desc, services }) => {
+const Plan = ({ id, reversed, image, title, services }) => {
   const { generic } = useContext(AnimationContext);
   return (
     <m.div
@@ -37,6 +37,7 @@ const Plan = ({ id, reversed, image, title, desc, services }) => {
                 service.title === 'Maintenance & Housekeeping' && id === 1;
               return (
                 <li
+                  key={service.id}
                   className={`${
                     isAvailable && 'opacity-50 line-through'
                   } flex justify-between items-center`}

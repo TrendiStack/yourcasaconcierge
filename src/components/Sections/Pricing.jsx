@@ -1,13 +1,15 @@
-import content from '../../content';
 import Plan from '../pricing/Plan';
 import { motion as m } from 'framer-motion';
 import { useContext } from 'react';
 import { AnimationContext } from '../../context/AnimationContext';
+import { SanityContext } from '../../context/SanityContext';
+import { urlFor } from '../../lib/client';
 
 const Pricing = () => {
-  const { pricing, services } = content;
-  const { plans } = pricing;
   const { generic } = useContext(AnimationContext);
+  const { pricing: data, services } = useContext(SanityContext);
+  const plans = data[0]?.pricing;
+
   return (
     <m.div
       initial={'hidden'}
@@ -19,18 +21,18 @@ const Pricing = () => {
     >
       <m.div className="container layout-padding">
         <m.h1 variants={generic} className="header-text text-primary">
-          {pricing.title}
+          {/* {pricing.title} */}
         </m.h1>
         <div className="flex flex-col gap-14">
-          {plans.map(plan => (
+          {plans?.map(plan => (
             <Plan
               key={plan.id}
               id={plan.id}
               title={plan.title}
               desc={plan.description}
               reversed={plan.id % 2 === 0}
-              image={plan.image}
-              services={services.services}
+              image={urlFor(plan.image).url()}
+              services={services[0].services}
             />
           ))}
         </div>

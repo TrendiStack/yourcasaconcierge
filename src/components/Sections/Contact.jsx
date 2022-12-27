@@ -1,13 +1,15 @@
-import content from '../../content';
-import Form from '../contact/Form';
-import { motion as m } from 'framer-motion';
 import { useContext } from 'react';
 import { AnimationContext } from '../../context/AnimationContext';
+import { SanityContext } from '../../context/SanityContext';
+import { motion as m } from 'framer-motion';
+import Form from '../contact/Form';
 
 const Contact = () => {
-  const { contact } = content;
-  const { footer } = content;
   const { generic } = useContext(AnimationContext);
+  const { contact: data, footer: data2 } = useContext(SanityContext);
+  const contact = data[0];
+  const footer = data2[0];
+
   return (
     <m.div
       initial={'hidden'}
@@ -22,13 +24,13 @@ const Contact = () => {
           variants={generic}
           className="sm:hidden garamond text-center text-xl"
         >
-          {contact.subtitle}
+          {contact?.subtitle}
         </m.h2>
         <m.h1
           variants={generic}
           className="text-center sm:text-left header-text-mobile text-primary"
         >
-          {contact.title}
+          {contact?.title}
         </m.h1>
         <div className="xl:grid grid-cols-2 gap-10 garamond">
           <div className="text-left">
@@ -36,12 +38,12 @@ const Contact = () => {
               variants={generic}
               className="hidden text-2xl sm:block my-5 w-5/6"
             >
-              {contact.subtitle}
+              {contact?.subtitle}
             </m.h2>
             <m.div variants={generic} className="hidden sm:flex flex-col mb-10">
               <span>
-                <a className="text-3xl" href={`mailto:${footer.email}`}>
-                  {footer.email}
+                <a className="text-3xl" href={`mailto:${footer?.email}`}>
+                  {footer?.email}
                 </a>
               </span>
             </m.div>
@@ -51,8 +53,8 @@ const Contact = () => {
             className="sm:hidden flex flex-col pb-10 text-center"
           >
             <span>
-              <a className="text-xl" href="mailto:hello@yourcasaconcierge.com">
-                {footer.email}
+              <a className="text-xl" href={`mailto:${footer?.email}`}>
+                {footer?.email}
               </a>
             </span>
           </m.div>

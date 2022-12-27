@@ -1,3 +1,8 @@
+import {
+  pricingPlanOne,
+  pricingPlanTwo,
+  pricingPlanThree,
+} from './assets/images/content';
 const content = {
   nav: [
     {
@@ -95,14 +100,14 @@ const content = {
       {
         id: 1,
         title: 'Basic',
-        image: '',
+        image: pricingPlanTwo,
         description: `10% ( includes all services, except for Professional House Keeping)`,
       },
 
       {
         id: 2,
         title: 'Premium',
-        image: '',
+        image: pricingPlanThree,
         description: `20% (Includes all services)`,
       },
     ],

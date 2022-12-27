@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react';
 
 const NewsletterToaster = ({ status, message }) => {
   const [errorStatus, setErrorStatus] = useState(null);
@@ -13,20 +13,20 @@ const NewsletterToaster = ({ status, message }) => {
   }, [status]);
   return (
     <div
-      className={`fixed w-auto top-0 bg-variant-2 text-center text-xl p-3 garamond 
+      className={`fixed w-auto top-0 bg-dark text-center text-xl p-3 garamond 
             ${
-              errorStatus ? "top-0 opacity-1" : "-top-32 opacity-0"
+              errorStatus ? 'top-0 opacity-1' : '-top-32 opacity-0'
             } transition-all duration-1000 z-[100] left-[50%] transform -translate-x-1/2
           `}
     >
       <span className="animate-pulse">
-        {status === "sending"
-          ? "Sending..."
-          : status === "error"
+        {status === 'sending'
+          ? 'Sending...'
+          : status === 'error'
           ? message
-          : status === "success"
+          : status === 'success'
           ? message
-          : ""}
+          : ''}
       </span>
     </div>
   );
