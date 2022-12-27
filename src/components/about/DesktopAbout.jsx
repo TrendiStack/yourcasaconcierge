@@ -22,7 +22,7 @@ const DesktopAbout = () => {
         variants={generic}
         className="about-header-text text-primary garamond lg:relative top-12  px-10 text-center tracking-tight z-30"
       >
-        Let's get to know <br /> each other
+        {about?.firstLineOfTitle} <br /> {about?.secondLineOfTitle}
       </m.h1>
       {about?.image && (
         <m.img
