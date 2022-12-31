@@ -1,4 +1,3 @@
-import content from '../content';
 import { useContext } from 'react';
 import { MenuContext } from '../context/MenuContext';
 import { HashLink as Link } from 'react-router-hash-link';
@@ -10,10 +9,12 @@ import {
 } from 'react-icons/fa';
 
 import { motion as m } from 'framer-motion';
+import { SanityContext } from '../context/SanityContext';
 
 const Menu = () => {
   const { isOpen, toggleMenu } = useContext(MenuContext);
-  const { nav } = content;
+  const { navigation: nav } = useContext(SanityContext);
+  const navLinks = nav[0]?.navigation;
   return (
     <>
       <m.div
@@ -25,7 +26,7 @@ const Menu = () => {
     lg:hidden bg-dark garamond text-white menu-text py-28 px-8`}
       >
         <ul className="flex flex-col gap-10">
-          {nav.map(item => {
+          {navLinks?.map(item => {
             return (
               <li key={item.id}>
                 <Link onClick={toggleMenu} to={`/#${item.path}`}>

@@ -19,6 +19,7 @@ const Nav = () => {
   const { footervisible } = useContext(RefContext);
   const { generic } = useContext(AnimationContext);
   const { navigation: nav, footer: foot } = useContext(SanityContext);
+  const navLinks = nav[0]?.navigation;
   const footer = foot[0];
   // background
   const [bg, setBg] = useState();
@@ -38,7 +39,6 @@ const Nav = () => {
       window.removeEventListener('scroll', () => {});
     };
   }, [isOpen]);
-
   return (
     <>
       <Menu />
@@ -75,9 +75,9 @@ const Nav = () => {
             )}
           </Link>
           <ul className="hidden relative xl:flex gap-3 text-white text-md font-normal text-lg ">
-            {nav?.map((item, index) => {
+            {navLinks?.map((item, index) => {
               return (
-                <m.li variants={generic} key={item.id}>
+                <m.li>
                   <LinkItem to={item.path} text={item.title} />
                 </m.li>
               );
@@ -87,9 +87,15 @@ const Nav = () => {
             variants={generic}
             className="flex items-center gap-4 xl:hidden text-white"
           >
-            <Link to={`/#${nav[nav.length - 1]?.path}`} className="xl:hidden">
-              Contact
-            </Link>
+            {navLinks && (
+              <Link
+                to={`/#${navLinks[navLinks.length - 1]?.path}`}
+                className="xl:hidden"
+              >
+                Contact
+              </Link>
+            )}
+
             <div onClick={toggleMenu} className="menu-btn">
               <div className={`${isOpen} bg-white `}></div>
               <div className={`${isOpen} bg-white `}></div>
