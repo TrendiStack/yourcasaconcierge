@@ -7,8 +7,8 @@ import Form from '../contact/Form';
 const Contact = () => {
   const { generic } = useContext(AnimationContext);
   const { contact: data, footer: data2 } = useContext(SanityContext);
-  const contact = data[0];
-  const footer = data2[0];
+  const contact = data[0] === undefined ? null : data[0];
+  const footer = data2[0] === undefined ? null : data2[0];
 
   return (
     <m.div

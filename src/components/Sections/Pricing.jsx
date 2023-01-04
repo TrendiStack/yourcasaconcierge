@@ -8,7 +8,7 @@ import { urlFor } from '../../lib/client';
 const Pricing = () => {
   const { generic } = useContext(AnimationContext);
   const { pricing: data, services } = useContext(SanityContext);
-  const plans = data[0]?.pricing;
+  const plans = data[0]?.pricing || null;
 
   return (
     <m.div

@@ -8,7 +8,7 @@ import MailChimpForm from '../contact/MailChimpForm';
 const Hero = () => {
   const { generic } = useContext(AnimationContext);
   const { hero: data } = useContext(SanityContext);
-  const hero = data[0];
+  const hero = data[0] === undefined ? null : data[0];
 
   return (
     <m.header

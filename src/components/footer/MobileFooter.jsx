@@ -11,7 +11,7 @@ import {
 
 const MobileFooter = () => {
   const { navigation: nav, footer: foot } = useContext(SanityContext);
-  const footer = foot[0];
+  const footer = foot[0] === undefined ? null : foot[0];
   return (
     <div className="container xl:hidden layout-padding py-10 text-light">
       {footer?.logo && (

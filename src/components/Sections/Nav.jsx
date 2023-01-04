@@ -19,8 +19,8 @@ const Nav = () => {
   const { footervisible } = useContext(RefContext);
   const { generic } = useContext(AnimationContext);
   const { navigation: nav, footer: foot } = useContext(SanityContext);
-  const navLinks = nav[0]?.navigation;
-  const footer = foot[0];
+  const navLinks = nav[0]?.navigation || [];
+  const footer = foot[0] || {};
   // background
   const [bg, setBg] = useState();
   useEffect(() => {
@@ -77,7 +77,7 @@ const Nav = () => {
           <ul className="hidden relative xl:flex gap-3 text-white text-md font-normal text-lg ">
             {navLinks?.map((item, index) => {
               return (
-                <m.li>
+                <m.li key={index}>
                   <LinkItem to={item.path} text={item.title} />
                 </m.li>
               );

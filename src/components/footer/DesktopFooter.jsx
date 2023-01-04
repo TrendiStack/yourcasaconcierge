@@ -18,7 +18,7 @@ const DesktopFooter = () => {
   const { navigation: nav, footer: foot } = useContext(SanityContext);
   const { footerRef } = useContext(RefContext);
   const { generic } = useContext(AnimationContext);
-  const footer = foot[0];
+  const footer = foot[0] === undefined ? null : foot[0];
   const banner = footer?.banner;
 
   return (
@@ -60,8 +60,8 @@ const DesktopFooter = () => {
 
           <m.div variants={generic}>
             <ul className="relative text-lg font-medium flex gap-5">
-              {nav?.map(item => (
-                <li key={item.id}>
+              {nav?.map((item, index) => (
+                <li key={index}>
                   <LinkItem to={item.path} text={item.title} />
                 </li>
               ))}

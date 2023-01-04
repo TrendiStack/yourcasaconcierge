@@ -8,7 +8,7 @@ import Service from '../services/Service';
 const Services = () => {
   const { services } = useContext(SanityContext);
   const { generic } = useContext(AnimationContext);
-  const data = services[0];
+  const data = services[0] === undefined ? null : services[0];
 
   return (
     <div id="services" className="bg-dark pb-36">
@@ -54,16 +54,6 @@ const Services = () => {
       </m.div>
     </div>
   );
-};
-
-export const getServerSideProps = async () => {
-  const query = `*[_type == "services"]`;
-  const servicess = await client.fetch(query);
-  return {
-    props: {
-      servicess,
-    },
-  };
 };
 
 export default Services;

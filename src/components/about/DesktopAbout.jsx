@@ -8,7 +8,7 @@ import { urlFor } from '../../lib/client';
 const DesktopAbout = () => {
   const { about: data } = useContext(SanityContext);
   const { generic } = useContext(AnimationContext);
-  const about = data[0];
+  const about = data[0] === undefined ? null : data[0];
 
   return (
     <m.div
