@@ -32,7 +32,7 @@ const Pricing = () => {
               desc={plan.description}
               reversed={plan.id % 2 === 0}
               image={urlFor(plan.image).url()}
-              services={services[0].services}
+              services={services[0]?.services}
             />
           ))}
         </div>
