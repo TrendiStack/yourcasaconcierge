@@ -26,11 +26,11 @@ const Pricing = () => {
         <div className="flex flex-col gap-14">
           {plans?.map(plan => (
             <Plan
-              key={plan.id}
-              id={plan.id}
-              title={plan.title}
-              desc={plan.description}
-              reversed={plan.id % 2 === 0}
+              key={plan?.id}
+              id={plan?.id}
+              title={plan?.title}
+              desc={plan?.description}
+              reversed={plan?.id % 2 === 0}
               image={urlFor(plan.image).url()}
               services={services[0]?.services}
             />

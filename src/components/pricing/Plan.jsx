@@ -32,17 +32,17 @@ const Plan = ({ id, reversed, image, title, services }) => {
         </m.p>
         <m.div className="bg-dark text-[18px] ">
           <ul className="flex flex-col gap-5 p-5 text-light">
-            {services.map(service => {
+            {services?.map(service => {
               const isAvailable =
-                service.title === 'Maintenance & Housekeeping' && id === 1;
+                service?.title === 'Maintenance & Housekeeping' && id === 1;
               return (
                 <li
-                  key={service.id}
+                  key={service?.id}
                   className={`${
                     isAvailable && 'opacity-50 line-through'
                   } flex justify-between items-center`}
                 >
-                  <p>{service.title}</p>
+                  <p>{service?.title}</p>
                   {isAvailable ? (
                     <IoCloseSharp />
                   ) : (
