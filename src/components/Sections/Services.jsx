@@ -15,7 +15,7 @@ const Services = () => {
       <m.div
         initial={'hidden'}
         whileInView={'visible'}
-        viewport={{ once: true, amount: 0.3 }}
+        viewport={{ once: true, amount: 0.2 }}
         transition={{ staggerChildren: 0.5 }}
         className="container layout-padding flex flex-col"
       >
