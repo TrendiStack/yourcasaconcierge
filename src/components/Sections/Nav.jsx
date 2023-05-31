@@ -39,7 +39,6 @@ const Nav = () => {
       window.removeEventListener('scroll', () => {});
     };
   }, [isOpen]);
-  console.log(navLinks);
   return (
     <>
       <Menu />

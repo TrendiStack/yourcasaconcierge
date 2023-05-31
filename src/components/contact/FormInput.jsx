@@ -1,8 +1,11 @@
+import Error from './Error';
+
 const FormInput = ({
   name,
   placeholder,
   type,
   value,
+  checked,
   onChange,
   onBlur,
   touched,
@@ -11,37 +14,69 @@ const FormInput = ({
   return (
     <>
       {name === 'inquiry' ? (
-        <textarea
-          className={`bg-transparent placeholder:bg-transparent border-b rounded-none border-primary
-                   border-opacity-50 focus:outline-none  focus:placeholder-white
+        <div>
+          <label htmlFor={name} className="sr-only">
+            {placeholder}
+          </label>
+          {/* Error Message */}
+          {touched && errors && <Error error={errors} />}
+          <textarea
+            className={`bg-transparent placeholder:bg-transparent border-b rounded-none border-primary
+                   border-opacity-50 focus:outline-none  focus:placeholder-white w-full
                    ${
                      touched && errors
-                       ? 'border-red-500 bg-transparent placeholder:text-red-500'
+                       ? 'bg-transparent placeholder:text-red-500'
                        : 'placeholder-primary placeholder:text-lg'
                    }`}
-          name={name}
-          placeholder={placeholder}
-          type={type}
-          value={value}
-          onChange={onChange}
-          onBlur={onBlur}
-        />
+            name={name}
+            placeholder={placeholder}
+            type={type}
+            value={value}
+            onChange={onChange}
+            onBlur={onBlur}
+          />
+        </div>
+      ) : name === 'underManagement' ? (
+        <div className="flex items-center gap-2">
+          <input
+            type={type}
+            name={name}
+            id={value}
+            value={value}
+            className="w-4 h-4
+            appearance-none rounded-full border-2 border-primary border-opacity-50
+            checked:bg-[#262323] focus:outline-none"
+            onChange={onChange}
+            onBlur={onBlur}
+            checked={checked}
+          />
+          <label htmlFor={name} className="text-lg text-tertiary">
+            {placeholder}
+          </label>
+        </div>
       ) : (
-        <input
-          className={`bg-transparent placeholder:bg-transparent border-b rounded-none border-primary
-          border-opacity-50 focus:outline-none  focus:placeholder-white
+        <div>
+          <label htmlFor={name} className="sr-only">
+            {placeholder}
+          </label>
+          {/* Error Message */}
+          {touched && errors && <Error error={errors} />}
+          <input
+            className={`bg-transparent placeholder:bg-transparent border-b rounded-none border-primary
+          border-opacity-50 focus:outline-none  focus:placeholder-white w-full
           ${
             touched && errors
-              ? 'border-red-500 bg-transparent placeholder:text-red-500'
+              ? 'bg-transparent placeholder:text-red-500'
               : 'placeholder-primary placeholder:text-lg'
           }`}
-          name={name}
-          placeholder={placeholder}
-          type={type}
-          value={value}
-          onChange={onChange}
-          onBlur={onBlur}
-        />
+            name={name}
+            placeholder={placeholder}
+            type={type}
+            value={value}
+            onChange={onChange}
+            onBlur={onBlur}
+          />
+        </div>
       )}
     </>
   );
