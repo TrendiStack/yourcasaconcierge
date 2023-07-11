@@ -91,21 +91,6 @@ const content = {
   pricing: {
     title: 'Pricing',
     description: 'We offer the best prices for our customers',
-    plans: [
-      {
-        id: 1,
-        title: 'Basic',
-        image: '',
-        description: `10% ( includes all services, except for Professional House Keeping)`,
-      },
-
-      {
-        id: 2,
-        title: 'Premium',
-        image: '',
-        description: `20% (Includes all services)`,
-      },
-    ],
   },
 
   contact: {

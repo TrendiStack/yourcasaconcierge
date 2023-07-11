@@ -32,7 +32,7 @@ const DesktopFooter = () => {
         />
       )}
 
-      <div className="container layout-padding hidden xl:block py-5 text-light">
+      <div className="hidden xl:block py-5 container layout-padding">
         <m.div
           initial={'hidden'}
           whileInView={'visible'}
@@ -47,7 +47,7 @@ const DesktopFooter = () => {
               </p>
             </div>
             <div className="flex items-center gap-2 text-xl">
-              <div className="w-[27px] h-[3.03px] bg-light"></div>
+              <div className="w-[27px] h-[3.03px] bg-black"></div>
               <p>Follow us</p>
             </div>
             <m.div variants={generic} className="flex text-lg gap-2">
@@ -81,7 +81,7 @@ const DesktopFooter = () => {
             {footer?.logo && (
               <m.img
                 variants={generic}
-                className="w-[400px]"
+                className="w-[400px] bg-black"
                 src={urlFor(footer.logo).url()}
                 loading="lazy"
                 alt="logo white"

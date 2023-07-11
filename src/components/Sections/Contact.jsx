@@ -11,13 +11,12 @@ const Contact = () => {
   const footer = data2[0] === undefined ? null : data2[0];
 
   return (
-    <m.div
+    <m.section
       initial={'hidden'}
       whileInView={'visible'}
       viewport={{ once: true, amount: 0.5 }}
       transition={{ staggerChildren: 0.1 }}
       id="contact"
-      className="pt-10 pb-20 bg-light"
     >
       <div className="container layout-padding">
         <m.h2
@@ -61,7 +60,7 @@ const Contact = () => {
           <Form />
         </div>
       </div>
-    </m.div>
+    </m.section>
   );
 };
 

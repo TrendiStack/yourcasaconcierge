@@ -1,10 +1,21 @@
-import { About, Services, Pricing, Brands, Contact, Footer } from './Sections';
+import {
+  About,
+  PropertyManagement,
+  Services,
+  Pricing,
+  Properties,
+  Brands,
+  Contact,
+  Footer,
+} from './Sections';
+
 const Layout = () => {
   return (
-    <div className="overflow-hidden">
+    <div className="overflow-hidden text-black flex flex-col gap-20 lg:gap-40">
       <About />
-      <Services />
+      <PropertyManagement />
       <Pricing />
+      <Properties />
       <Brands />
       <Contact />
       <Footer />

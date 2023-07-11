@@ -3,7 +3,7 @@ import DesktopFooter from '../footer/DesktopFooter';
 
 const Footer = () => {
   return (
-    <footer className="flex flex-col justify-center bg-dark">
+    <footer className="flex flex-col justify-center">
       <MobileFooter />
       <DesktopFooter />
     </footer>
