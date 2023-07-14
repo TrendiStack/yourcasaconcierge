@@ -17,7 +17,6 @@ const Nav = () => {
   const { generic } = useContext(AnimationContext);
   const { navigation: nav, footer: foot } = useContext(SanityContext);
   const navLinks = nav[0]?.navigation || [];
-  const footer = foot[0] || {};
   // background
   const [bg, setBg] = useState();
   useEffect(() => {
@@ -60,33 +59,13 @@ const Nav = () => {
             <MobileLogo bg={bg} isOpen={isOpen} />
           </Link>
           <ul className="hidden relative xl:flex gap-3 text-md font-normal text-lg">
-            {/* {navLinks?.map((item, index) => {
+            {navLinks?.map((item, index) => {
               return (
                 <m.li key={index}>
                   <LinkItem to={item.path} text={item.title} bg={bg} />
-                  
                 </m.li>
               );
-            })} */}
-            <m.li>
-              <LinkItem to="about" text="About" bg={bg} />
-            </m.li>
-            <m.li>
-              <LinkItem
-                to="property-management"
-                text="Property Managment"
-                bg={bg}
-              />
-            </m.li>
-            <m.li>
-              <LinkItem to="properties" text="Properties" bg={bg} />
-            </m.li>
-            <m.li>
-              <LinkItem to="partners" text="Partners" bg={bg} />
-            </m.li>
-            <m.li>
-              <LinkItem to="contact" text="Contact" bg={bg} />
-            </m.li>
+            })}
           </ul>
           <m.div
             variants={generic}

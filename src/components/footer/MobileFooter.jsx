@@ -1,7 +1,6 @@
 import { useContext } from 'react';
 import { SanityContext } from '../../context/SanityContext';
 import MailChimpForm from '../contact/MailChimpForm';
-import { urlFor } from '../../lib/client';
 import {
   FaFacebookF,
   FaTwitter,
@@ -15,16 +14,7 @@ const MobileFooter = () => {
   const footer = foot[0] === undefined ? null : foot[0];
   return (
     <div className="container xl:hidden layout-padding py-10">
-      {/* {footer?.logo && (
-        <img
-          className="w-[200px] logo bg-black"
-          src={urlFor(footer.logo).url()}
-          loading="lazy"
-          alt="Your Casa Concierge Logo"
-        />
-      )} */}
-      <LargeLogo bg="bg-light" />
-
+      <LargeLogo bg="bg-light" />s
       <div className="flex justify-between my-4">
         <ul className="flex flex-col gap-2">
           {nav
@@ -45,7 +35,6 @@ const MobileFooter = () => {
             ))}
         </ul>
       </div>
-
       <div className="mb-4">
         <p className="font-semibold">Contact:</p>
         <p>{footer?.email}</p>

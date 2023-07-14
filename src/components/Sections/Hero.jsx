@@ -33,15 +33,12 @@ const Hero = () => {
         variants={generic}
         className="relative container garamond layout-padding flex flex-col gap-3 xl:block z-30"
       >
-        <m.h2 variants={generic} className="text-xl xl:text-2xl">
-          {/* {hero?.heroTitleSmall} */}
-          Higher occupancy, better guest experience, more revenue. We do it all,
-          so you don't have to!
-        </m.h2>
         <m.h1 variants={generic} className="text-5xl xl:text-8xl">
-          {/* {hero?.heroTitleLarge} */}
-          End-to-End Short Term Rental Management
+          {hero?.heroTitleLarge}
         </m.h1>
+        <m.h2 variants={generic} className="text-xl xl:text-2xl">
+          {hero?.heroTitleSmall}
+        </m.h2>
         <m.button
           variants={generic}
           className="xl:hidden border border-white py-2 px-4 self-start"
