@@ -20,7 +20,7 @@ const FormSent = () => {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
-        className="text-center text-white"
+        className="text-center text-light"
       >
         <h1>Thank you for your message!</h1>
         <p>We will get back to you as soon as possible.</p>
@@ -34,7 +34,7 @@ const FormSent = () => {
       >
         <a
           href="/"
-          className="text-xl xl:text-3xl text-white xl:hover:bg-black transition-all duration-300 ease-in-out xl:hover:p-3"
+          className="text-xl xl:text-3xl text-light xl:hover:bg-dark transition-all duration-300 ease-in-out xl:hover:p-3"
         >
           GO BACK HOME
         </a>

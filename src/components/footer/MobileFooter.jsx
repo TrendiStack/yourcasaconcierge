@@ -8,20 +8,22 @@ import {
   FaInstagram,
   FaLinkedin,
 } from 'react-icons/fa';
+import LargeLogo from '../LargeLogo';
 
 const MobileFooter = () => {
   const { navigation: nav, footer: foot } = useContext(SanityContext);
   const footer = foot[0] === undefined ? null : foot[0];
   return (
-    <div className="container xl:hidden layout-padding py-10 text-light">
-      {footer?.logo && (
+    <div className="container xl:hidden layout-padding py-10">
+      {/* {footer?.logo && (
         <img
-          className="w-[200px] logo"
+          className="w-[200px] logo bg-black"
           src={urlFor(footer.logo).url()}
           loading="lazy"
           alt="Your Casa Concierge Logo"
         />
-      )}
+      )} */}
+      <LargeLogo bg="bg-light" />
 
       <div className="flex justify-between my-4">
         <ul className="flex flex-col gap-2">
@@ -50,7 +52,7 @@ const MobileFooter = () => {
       </div>
       <div className="flex justify-between my-2">
         <div className="flex items-center gap-2">
-          <div className="w-[27px] h-[3.03px] bg-light"></div>
+          <div className="w-[27px] h-[3.03px] bg-dark"></div>
           <p>Follow us</p>
         </div>
         <div className="flex gap-2">

@@ -28,22 +28,22 @@ const FooterForm = ({
     }
   };
   return (
-    <form onSubmit={submit} className="text-black">
-      <div className="text-white">
+    <form onSubmit={submit} className="text-dark">
+      <div className="text-light">
         <NewsletterToaster status={status} message={message} />
       </div>
 
       <p className="text-xl garamond mb-2">Stay updated on the latest deals!</p>
       <input
         type="email"
-        className="text-dark py-1 rounded-sm placeholder:font-serif placeholder:text-sm w-2/3 outline-gray-500"
+        className="text-dark bg-transparent py-1 placeholder-dark placeholder:font-serif placeholder:text-sm w-2/3 outline-dark border-b border-dark indent-2"
         placeholder="Enter your Email"
         onChange={e => setCustomer({ ...customer, email: e.target.value })}
         required
       />
       <button
         type="submit"
-        className="hover:text-black hover:p-1 hover:bg-white transition-all duration-500 ml-2 rounded-sm"
+        className="hover:text-light hover:p-1 hover:bg-dark transition-all duration-500 ml-2 rounded-sm"
       >
         Subscribe
       </button>

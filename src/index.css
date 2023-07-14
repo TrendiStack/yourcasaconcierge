@@ -8,10 +8,11 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 80px;
+  scroll-padding-top: 200px;
 }
 body {
   font-family: 'Inter', sans-serif;
+  @apply bg-light;
 }
 
 /* TYPOGRAPHY */
@@ -23,12 +24,16 @@ body {
 
 /* LAYOUT */
 .layout-padding {
-  @apply mx-auto;
+  @apply mx-auto 
+  max-md:px-0
+  lg:px-10
+  xl:px-20
+  2xl:px-5;
 }
 
 /* COLOR THEME */
 
-.text-light {
+/* .text-light {
   @apply text-white;
 }
 
@@ -58,15 +63,7 @@ body {
 
 .bg-variant {
   @apply bg-[#262323];
-}
-
-.border-primary {
-  @apply border-[#4f4d4b];
-}
-
-.placeholder-primary {
-  @apply placeholder-[#4f4d4b];
-}
+} */
 
 /* HEADER TEXT STYLES */
 
@@ -110,13 +107,13 @@ body {
 }
 
 .pricing-btn-mobile {
-  @apply border border-primary text-primary font-semibold py-2 px-5 self-start;
+  @apply border border-dark text-dark font-semibold py-2 px-5 self-start;
 }
 
 .pricing-btn {
   @apply relative
           z-[1]
-          border border-primary py-2 px-5 self-start
+          border border-dark py-2 px-5 self-start
           after:content-['']
           after:absolute
           after:bottom-0
@@ -124,7 +121,7 @@ body {
           after:w-0
           after:h-full
           after:z-[-1]
-          after:bg-[#262323]
+          after:bg-variant
           xl:hover:after:w-full
           hover:after:left-[0%]
           after:transition-all
@@ -132,7 +129,7 @@ body {
           after:ease-in-out
           after:transform
           after:origin-left
-          xl:hover:text-white
+          xl:hover:text-light
           transition-all
           duration-500
           ease-in-out

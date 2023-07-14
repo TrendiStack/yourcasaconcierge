@@ -10,7 +10,7 @@ const Plan = ({ image, title, services }) => {
       {/* Services Container */}
       <div className="flex flex-col gap-5 lg:w-4/5 transition-all duration-500">
         <m.p className="text-4xl 2xl:text-[64px] header-text">Services</m.p>
-        <m.div className="bg-dark text-[18px]">
+        <m.div className="bg-variant text-[18px]">
           <ul className="flex flex-col gap-5 p-5 text-light">
             {services?.map(service => (
               <li
@@ -18,7 +18,7 @@ const Plan = ({ image, title, services }) => {
                 className={`flex justify-between items-center`}
               >
                 <p>{service?.title}</p>
-                <FiCheck className="text-secondary" />
+                <FiCheck className="text-accent" />
               </li>
             ))}
           </ul>

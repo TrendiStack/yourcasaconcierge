@@ -1,7 +1,6 @@
 import {
   About,
   PropertyManagement,
-  Services,
   Pricing,
   Properties,
   Brands,

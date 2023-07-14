@@ -15,18 +15,19 @@ const PropertyManagement = () => {
       whileInView={'visible'}
       viewport={{ once: true, amount: 0.2 }}
       transition={{ staggerChildren: 0.5 }}
+      className="text-dark"
     >
       <div className="container layout-padding">
         <m.h1
           variants={generic}
-          className="header-text text-primary text-center md:text-left"
+          className="header-text text-center md:text-left"
         >
           Property Management
         </m.h1>
 
         <m.div
           variants={generic}
-          className="grid grid-cols-1 2xl:grid-cols-3 gap-10 text-primary text-base xl:text-lg pt-10"
+          className="grid grid-cols-1 xl:grid-cols-3 gap-10 text-base 2xl:text-lg pt-10"
         >
           {about?.paragraphs.map((item, index) => {
             return (

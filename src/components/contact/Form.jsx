@@ -92,8 +92,6 @@ const Form = () => {
     phone,
     inquiry,
   } = formik.values;
-
-  console.log(formik.errors.phone);
   return (
     <m.form
       variants={generic}

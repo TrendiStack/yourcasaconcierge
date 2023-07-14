@@ -33,14 +33,14 @@ const HeroForm = ({ status, message, onValidated, customer, setCustomer }) => {
       animate={{ opacity: 1 }}
       transition={{ duration: 1, delay: 0.5 }}
       onSubmit={submit}
-      className="hidden absolute bottom-0 xl:block border-y border-white w-full z-30"
+      className="hidden absolute bottom-0 xl:block border-y border-light w-full z-30"
     >
       <NewsletterToaster status={status} message={message} />
       <div className="container layout-padding flex">
         <input
           type="text"
           placeholder="First Name"
-          className="border-r border-white py-5 bg-transparent placeholder:text-white outline-[#D6DFDE]"
+          className="border-r border-light py-5 bg-transparent placeholder:text-light outline-light"
           value={customer.firstName}
           onChange={e =>
             setCustomer({ ...customer, firstName: e.target.value })
@@ -50,7 +50,7 @@ const HeroForm = ({ status, message, onValidated, customer, setCustomer }) => {
         <input
           type="text"
           placeholder="Last Name"
-          className="border-r border-white pl-5 py-5 bg-transparent placeholder:text-white outline-[#D6DFDE]"
+          className="border-r border-light pl-5 py-5 bg-transparent placeholder:text-light outline-light"
           value={customer.lastName}
           onChange={e => setCustomer({ ...customer, lastName: e.target.value })}
           required
@@ -58,12 +58,12 @@ const HeroForm = ({ status, message, onValidated, customer, setCustomer }) => {
         <input
           type="email"
           placeholder="Email"
-          className="border-r border-white pl-5 py-5 bg-transparent placeholder:text-white outline-[#D6DFDE]"
+          className="border-r border-light pl-5 py-5 bg-transparent placeholder:text-light outline-light"
           value={customer.email}
           onChange={e => setCustomer({ ...customer, email: e.target.value })}
           required
         />
-        <button className="py-5 bg-transparent placeholder:text-white outline-[#D6DFDE] w-full ">
+        <button className="py-5 bg-transparent placeholder:text-light outline-light w-full ">
           Stay Up to Date!
         </button>
       </div>

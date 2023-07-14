@@ -60,7 +60,7 @@ const PageNotFound = () => {
           >
             <a
               href="/"
-              className="garamond text-xl xl:text-3xl xl:hover:text-white xl:hover:bg-black transition-all duration-300 ease-in-out xl:hover:p-3"
+              className="garamond text-xl xl:text-3xl xl:hover:text-light xl:hover:bg-dark transition-all duration-300 ease-in-out xl:hover:p-3"
             >
               GO BACK HOME
             </a>

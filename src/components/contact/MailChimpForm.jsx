@@ -1,13 +1,13 @@
-import { useState } from "react";
-import MailchimpSubscribe from "react-mailchimp-subscribe";
-import FooterForm from "./FooterForm";
-import HeroForm from "./HeroForm";
+import { useState } from 'react';
+import MailchimpSubscribe from 'react-mailchimp-subscribe';
+import FooterForm from './FooterForm';
+import HeroForm from './HeroForm';
 
 const MailChimpForm = ({ footer, mobile }) => {
   const [customer, setCustomer] = useState({
-    email: "",
-    firstName: "",
-    lastName: "",
+    email: '',
+    firstName: '',
+    lastName: '',
   });
   const url = `https://app.us11.list-manage.com/subscribe/post?u=${
     import.meta.env.VITE_MAILCHIMP_U
@@ -26,7 +26,7 @@ const MailChimpForm = ({ footer, mobile }) => {
                 customer={customer}
                 setCustomer={setCustomer}
                 mobile={mobile}
-                onValidated={(formData) => subscribe(formData)}
+                onValidated={formData => subscribe(formData)}
               />
             ) : (
               <HeroForm
@@ -34,7 +34,7 @@ const MailChimpForm = ({ footer, mobile }) => {
                 message={message}
                 customer={customer}
                 setCustomer={setCustomer}
-                onValidated={(formData) => subscribe(formData)}
+                onValidated={formData => subscribe(formData)}
               />
             )}
           </>

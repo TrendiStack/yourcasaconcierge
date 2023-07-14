@@ -5,11 +5,11 @@ import { motion as m } from 'framer-motion';
 import { Outlet } from 'react-router-dom';
 import { RefContext } from '../../context/RefContext';
 import { SanityContext } from '../../context/SanityContext';
-import { urlFor } from '../../lib/client';
 import { useContext, useState, useEffect } from 'react';
+import LargeSvg from '../LargeLogo';
 import LinkItem from '../LinkItem';
-import LogoSvg from '../LogoSvg';
 import Menu from '../Menu';
+import MobileLogo from '../MobileLogo';
 
 const Nav = () => {
   const { isOpen, toggleMenu } = useContext(MenuContext);
@@ -22,13 +22,13 @@ const Nav = () => {
   const [bg, setBg] = useState();
   useEffect(() => {
     window.addEventListener('scroll', () => {
-      setBg(window.scrollY > 0 ? 'bg-white' : 'bg-transparent');
+      setBg(window.scrollY > 0 ? 'bg-light' : 'bg-transparent');
     });
     setBg(
       isOpen === 'open'
         ? 'bg-transparent'
         : window.scrollY > 0
-        ? 'bg-white'
+        ? 'bg-light'
         : 'bg-transparent'
     );
 
@@ -44,7 +44,7 @@ const Nav = () => {
         className={`
         ${bg} 
         ${footervisible ? 'top-[-130px]' : 'top-0'}
-        ${bg === 'bg-white' ? 'shadow-lg text-black' : 'text-white'}
+        ${bg === 'bg-light' ? 'shadow-lg text-dark' : 'text-light'}
         fixed top-0 left-0 w-full py-5 z-50 transition-all duration-500`}
         initial={'hidden'}
         whileInView={'visible'}
@@ -56,41 +56,37 @@ const Nav = () => {
           className="container layout-padding flex justify-between items-center"
         >
           <Link to="/#home">
-            {footer?.logo && (
-              // <img
-              //   className="hidden xl:block w-[250px]"
-              //   src={urlFor(footer.logo).url()}
-              //   loading="lazy"
-              //   alt="large logo"
-              // />
-              <LogoSvg bg={bg} />
-            )}
-            {footer?.smallLogo && (
-              <img
-                className={`
-                ${
-                  bg === 'bg-white'
-                    ? 'filter invert'
-                    : isOpen === 'open'
-                    ? 'filter invert'
-                    : 'filter brightness-0 invert'
-                }
-                xl:hidden w-[80px] 
-                `}
-                src={urlFor(footer.smallLogo).url()}
-                loading="lazy"
-                alt="small logo"
-              />
-            )}
+            <LargeSvg bg={bg} nav />
+            <MobileLogo bg={bg} isOpen={isOpen} />
           </Link>
           <ul className="hidden relative xl:flex gap-3 text-md font-normal text-lg">
-            {navLinks?.map((item, index) => {
+            {/* {navLinks?.map((item, index) => {
               return (
                 <m.li key={index}>
-                  <LinkItem to={item.path} text={item.title} />
+                  <LinkItem to={item.path} text={item.title} bg={bg} />
+                  
                 </m.li>
               );
-            })}
+            })} */}
+            <m.li>
+              <LinkItem to="about" text="About" bg={bg} />
+            </m.li>
+            <m.li>
+              <LinkItem
+                to="property-management"
+                text="Property Managment"
+                bg={bg}
+              />
+            </m.li>
+            <m.li>
+              <LinkItem to="properties" text="Properties" bg={bg} />
+            </m.li>
+            <m.li>
+              <LinkItem to="partners" text="Partners" bg={bg} />
+            </m.li>
+            <m.li>
+              <LinkItem to="contact" text="Contact" bg={bg} />
+            </m.li>
           </ul>
           <m.div
             variants={generic}
@@ -99,7 +95,9 @@ const Nav = () => {
             {navLinks && (
               <Link
                 to={`/#${navLinks[navLinks.length - 1]?.path}`}
-                className="xl:hidden"
+                className={`
+                ${isOpen === 'open' ? 'text-dark' : ''}
+                xl:hidden`}
               >
                 Contact
               </Link>
@@ -108,11 +106,21 @@ const Nav = () => {
             <div onClick={toggleMenu} className="menu-btn cursor-pointer">
               <div
                 className={`${isOpen} 
-                ${bg === 'bg-white' ? 'bg-black' : 'bg-white'}`}
+                ${
+                  bg === 'bg-light'
+                    ? 'bg-dark'
+                    : isOpen === 'open'
+                    ? 'bg-dark'
+                    : 'bg-light'
+                }`}
               ></div>
               <div
-                className={`${isOpen} ${
-                  bg === 'bg-white' ? 'bg-black' : 'bg-white'
+                className={`${isOpen}  ${
+                  bg === 'bg-light'
+                    ? 'bg-dark'
+                    : isOpen === 'open'
+                    ? 'bg-dark'
+                    : 'bg-light'
                 }`}
               ></div>
             </div>

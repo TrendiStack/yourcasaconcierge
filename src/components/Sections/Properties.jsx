@@ -13,10 +13,10 @@ const Properties = () => {
         transition={{ staggerChildren: 0.5 }}
         className="container layout-padding min-h-[50vh] flex flex-col justify-center items-center"
       >
-        <m.h1 variants={generic} className="header-text text-primary">
+        <m.h1 variants={generic} className="header-text text-dark">
           Our Properties
         </m.h1>
-        <m.p variants={generic} className="text-gray-500 text-lg">
+        <m.p variants={generic} className="text-variant text-lg">
           Coming Soon
         </m.p>
       </m.div>

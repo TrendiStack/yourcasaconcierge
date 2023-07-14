@@ -12,11 +12,12 @@ const Contact = () => {
 
   return (
     <m.section
+      id="contact"
       initial={'hidden'}
       whileInView={'visible'}
       viewport={{ once: true, amount: 0.5 }}
       transition={{ staggerChildren: 0.1 }}
-      id="contact"
+      className="text-dark"
     >
       <div className="container layout-padding">
         <m.h2
@@ -27,7 +28,7 @@ const Contact = () => {
         </m.h2>
         <m.h1
           variants={generic}
-          className="text-center sm:text-left header-text-mobile text-primary"
+          className="text-center sm:text-left header-text-mobile"
         >
           {contact?.title}
         </m.h1>

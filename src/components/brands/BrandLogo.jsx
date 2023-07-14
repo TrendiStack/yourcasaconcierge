@@ -8,15 +8,15 @@ const BrandLogo = ({ logo, borderRight, borderBottom }) => {
 
   return (
     <div
-      className={`flex items-center justify-center h-40 xl:h-52 w-full 
+      className={`flex items-center justify-center h-40 xl:h-42 2xl:h-52 w-full 
       ${borderBottom ? 'border-b' : ''}
-      ${borderRight && 'border-r'} border-black`}
+      ${borderRight && 'border-r'} border-dark`}
     >
       {partners[0] && (
         <img
           src={urlFor(logoFilter[0].image).url()}
           alt="Partner Logo"
-          className="w-24 md:w-36 xl:w-auto"
+          className="w-24 md:w-36 xl:w-52 2xl:w-auto "
         />
       )}
     </div>

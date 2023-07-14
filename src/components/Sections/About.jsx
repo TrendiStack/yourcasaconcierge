@@ -15,10 +15,11 @@ const About = () => {
         whileInView={'visible'}
         viewport={{ once: true, amount: 0.2 }}
         transition={{ staggerChildren: 0.5 }}
+        className="text-dark"
       >
         <m.h1
           variants={generic}
-          className="about-header-text text-primary garamond max-lg:mt-10 lg:relative top-12 px-10 text-center tracking-tight z-30"
+          className="about-header-text garamond max-lg:mt-10 lg:relative top-12 px-10 text-center tracking-tight z-30"
         >
           {about?.firstLineOfTitle} <br /> {about?.secondLineOfTitle}
         </m.h1>
@@ -33,7 +34,7 @@ const About = () => {
         )}
         <m.div
           variants={generic}
-          className="container layout-padding text-xl lg:text-6xl garamond mt-20 lg:mt-40 text-shadow-lg"
+          className="container layout-padding text-xl lg:text-3xl 2xl:text-5xl garamond mt-20 lg:mt-40"
         >
           <h2>
             We are an end- to- end short term rental management company,

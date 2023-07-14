@@ -34,7 +34,7 @@ const Menu = () => {
         className="xl:hidden fixed top-28 left-0 h-screen w-screen z-50 garamond menu-text"
       >
         <div className="container mx-auto flex flex-col gap-10">
-          {navLinks?.map(item => {
+          {/* {navLinks?.map(item => {
             return (
               <li key={item.id}>
                 <Link onClick={toggleMenu} to={`/#${item.path}`}>
@@ -42,7 +42,32 @@ const Menu = () => {
                 </Link>
               </li>
             );
-          })}
+          })} */}
+          <li>
+            <Link onClick={toggleMenu} to={`/#about`}>
+              About
+            </Link>
+          </li>
+          <li>
+            <Link onClick={toggleMenu} to={`/#property-management`}>
+              Property Managment
+            </Link>
+          </li>
+          <li>
+            <Link onClick={toggleMenu} to={`/#properties`}>
+              Properties
+            </Link>
+          </li>
+          <li>
+            <Link onClick={toggleMenu} to={`/#partners`}>
+              Partners
+            </Link>
+          </li>
+          <li>
+            <Link onClick={toggleMenu} to={`/#contact`}>
+              Contact
+            </Link>
+          </li>
           <li>
             <a className="text-xl" href={`mailto:${footer?.email}`}>
               hello@yourcasaconcierge.com
