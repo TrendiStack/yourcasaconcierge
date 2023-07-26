@@ -14,6 +14,7 @@ const MobileFooter = () => {
   const footer = foot[0] === undefined ? null : foot[0];
   return (
     <div className="container xl:hidden layout-padding py-10">
+      test
       <LargeLogo bg="bg-light" />
       <div className="flex justify-between my-4">
         <ul className="flex flex-col gap-2">
