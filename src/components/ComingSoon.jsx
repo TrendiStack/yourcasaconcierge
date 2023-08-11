@@ -42,7 +42,7 @@ const ComingSoon = () => {
           transition={{ duration: 1.5, delay: 1.5 }}
           className="text-[10vw] lg:text-8xl capitalize garamond absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full z-10"
         >
-          coming soon
+          Vacation Villas Coming Soon
         </m.p>
         <m.div
           initial={{
@@ -55,8 +55,8 @@ const ComingSoon = () => {
           className="text-center text-base md:text-2xl absolute bottom-12 md:bottom-6 left-0 w-full z-10"
         >
           <p className="font-bold capitalize">contact</p>
-          <a className="text-sm md:text-base" href={`mailto:${footer?.email}`}>
-            {footer?.email}
+          <a className="text-sm md:text-base" href="tel:+18297142854">
+            +1 (829) 714-2854
           </a>
         </m.div>
       </m.div>
